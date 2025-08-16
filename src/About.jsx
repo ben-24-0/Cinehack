@@ -38,16 +38,15 @@ const About = () => {
           </div>
 
           {/* This is the image, now placed to the right of the text. */}
-        {/* I've used a placeholder URL since local files cannot be accessed in this environment. */}
-                  <img
-                    src="./About.png"
-                    alt="An image representing CineHack.ai"
-                    className="w-full max-w-xl rounded-lg" /* Changed from max-w-sm to max-w-md for larger size */
-                  />
-                </div>
+          {/* I've used a placeholder URL since local files cannot be accessed in this environment. */}
+          <img
+            src="./About.png"
+            alt="An image representing CineHack.ai"
+            className="w-full max-w-xl rounded-lg" /* Changed from max-w-sm to max-w-md for larger size */
+          />
+        </div>
 
-                {/* Bottom SVG wave to create a curved bottom edge. */}
- 
+        {/* Bottom SVG wave to create a curved bottom edge. */}
       </div>
     </div>
   );

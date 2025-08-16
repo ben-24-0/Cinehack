@@ -5,6 +5,7 @@ import About from "./About";
 import CardSwiper from "./components/CardSwiper";
 import PrizesAndOpportunities from "./Prizes";
 import  Timeline  from "./components/Timeline";
+import Footer from "./footer";
 function App() {
   return (
     <>
@@ -16,7 +17,7 @@ function App() {
 
           { label: "About", href: "#about" },
 
-          { label: "Prizes", href: "#prizes" },
+          { label: "Timeline", href: "#timeline" },
 
           { label: "Register", href: "#register" },
         ]}
@@ -33,6 +34,7 @@ function App() {
       <PrizesAndOpportunities />
       
       <Timeline/>
+        <Footer/>
     </>
   );
 }
