@@ -2,22 +2,25 @@ import CineHackHeader from "./header";
 import PillNav from "./components/PillNav";
 import logo from "../src/LOGO.png";
 import About from "./About";
+import CardSwiper from "./components/CardSwiper";
+import PrizesAndOpportunities from "./Prizes";
+import  Timeline  from "./components/Timeline";
 function App() {
   return (
     <>
       <PillNav
         logo={logo}
-        logoAlt="Company Logo"
+        logoAlt="FISAT Logo"
         items={[
-          { label: "Home", href: "/" },
+          { label: "Home", href: "#home" },
 
-          { label: "About", href: "/about" },
+          { label: "About", href: "#about" },
 
-          { label: "Services", href: "/services" },
+          { label: "Prizes", href: "#prizes" },
 
-          { label: "Contact", href: "/contact" },
+          { label: "Register", href: "#register" },
         ]}
-        activeHref="/"
+        activeHref="#home"
         className="custom-nav"
         ease="power2.easeOut"
         baseColor="#000000"
@@ -26,7 +29,10 @@ function App() {
         pillTextColor="#000000"
       />
       <CineHackHeader />
-      <About/>
+      <About />
+      <PrizesAndOpportunities />
+      
+      <Timeline/>
     </>
   );
 }

@@ -7,7 +7,7 @@ const PillNav = ({
   logo,
   logoAlt = "Logo",
   items,
-  activeHref,
+  activeHref: initialActiveHref,
   className = "",
   ease = "power3.easeOut",
   baseColor = "#fff",
@@ -19,6 +19,7 @@ const PillNav = ({
 }) => {
   const resolvedPillTextColor = pillTextColor ?? baseColor;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeHref, setActiveHref] = useState(initialActiveHref);
   const circleRefs = useRef([]);
   const tlRefs = useRef([]);
   const activeTweenRefs = useRef([]);
@@ -28,6 +29,55 @@ const PillNav = ({
   const mobileMenuRef = useRef(null);
   const navItemsRef = useRef(null);
   const logoRef = useRef(null);
+
+  // Effect to handle scroll and update active section
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 100; // offset to trigger slightly before reaching section
+
+      // Get all sections with IDs that match our navigation items
+      const sections = items
+        .map((item) => {
+          if (item.href?.startsWith("#")) {
+            const element = document.querySelector(item.href);
+            if (element) {
+              return {
+                id: item.href,
+                offsetTop: element.offsetTop,
+                height: element.offsetHeight,
+              };
+            }
+          }
+          return null;
+        })
+        .filter(Boolean);
+
+      // Find the current section based on scroll position
+      let currentSection = sections[0]?.id || initialActiveHref;
+
+      for (const section of sections) {
+        if (
+          scrollPosition >= section.offsetTop &&
+          scrollPosition < section.offsetTop + section.height
+        ) {
+          currentSection = section.id;
+          break;
+        }
+      }
+
+      // Update active href if changed
+      if (currentSection !== activeHref) {
+        setActiveHref(currentSection);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Call once on mount
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [items, activeHref, initialActiveHref]);
 
   useEffect(() => {
     const layout = () => {
@@ -223,10 +273,25 @@ const PillNav = ({
     href.startsWith("https://") ||
     href.startsWith("//") ||
     href.startsWith("mailto:") ||
-    href.startsWith("tel:") ||
-    href.startsWith("#");
+    href.startsWith("tel:");
 
-  const isRouterLink = (href) => href && !isExternalLink(href);
+  const isAnchorLink = (href) => href && href.startsWith("#");
+
+  const isRouterLink = (href) =>
+    href && !isExternalLink(href) && !isAnchorLink(href);
+
+  const handleAnchorClick = (e, href) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop,
+        behavior: "smooth",
+      });
+      // Update active state
+      window.history.pushState({}, "", href);
+    }
+  };
 
   const cssVars = {
     ["--base"]: baseColor,
@@ -298,6 +363,32 @@ const PillNav = ({
                       </span>
                     </span>
                   </Link>
+                ) : isAnchorLink(item.href) ? (
+                  <a
+                    role="menuitem"
+                    href={item.href}
+                    className={`pill${
+                      activeHref === item.href ? " is-active" : ""
+                    }`}
+                    aria-label={item.ariaLabel || item.label}
+                    onMouseEnter={() => handleEnter(i)}
+                    onMouseLeave={() => handleLeave(i)}
+                    onClick={(e) => handleAnchorClick(e, item.href)}
+                  >
+                    <span
+                      className="hover-circle"
+                      aria-hidden="true"
+                      ref={(el) => {
+                        circleRefs.current[i] = el;
+                      }}
+                    />
+                    <span className="label-stack">
+                      <span className="pill-label">{item.label}</span>
+                      <span className="pill-label-hover" aria-hidden="true">
+                        {item.label}
+                      </span>
+                    </span>
+                  </a>
                 ) : (
                   <a
                     role="menuitem"
@@ -358,6 +449,19 @@ const PillNav = ({
                 >
                   {item.label}
                 </Link>
+              ) : isAnchorLink(item.href) ? (
+                <a
+                  href={item.href}
+                  className={`mobile-menu-link${
+                    activeHref === item.href ? " is-active" : ""
+                  }`}
+                  onClick={(e) => {
+                    handleAnchorClick(e, item.href);
+                    setIsMobileMenuOpen(false);
+                  }}
+                >
+                  {item.label}
+                </a>
               ) : (
                 <a
                   href={item.href}

@@ -2,8 +2,10 @@ import React from "react";
 const CineHackHeader = () => {
   return (
     <>
-      
-      <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black relative">
+      <div
+        id="home"
+        className="min-h-screen bg-gradient-to-b from-gray-900 to-black relative"
+      >
         <div className="container mx-auto px-6 py-20">
           {/* Top logos section */}
           <div className="flex items-center justify-center mb-16 space-x-12">

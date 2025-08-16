@@ -1,9 +1,7 @@
-
 .pill-nav-container {
-  position: absolute;
+  position: fixed;
   top: 1em;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 2em;
   z-index: 99;
   width: max-content;
 }
@@ -11,10 +9,11 @@
 @media (max-width: 768px) {
   .pill-nav-container {
     width: 100%;
+    right: 0;
     left: 0;
+    transform: none;
   }
 }
-
 
 .pill-nav {
   --nav-h: 42px;

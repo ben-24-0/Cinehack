@@ -1,27 +1,25 @@
 @import "tailwindcss";
 
-
 .curved {
-        background: #fdc700;
-        color: white;
-        text-align: center;
+  background: #fdc700;
+  color: white;
+  text-align: center;
 }
 
 .curved h1 {
-    font-size: 6rem;
-    margin-top: 0;
+  font-size: 4rem;
+  margin-top: 0;
 }
 .curved p {
-    font-size: 1rem;
-    margin-top: 0 rem 5rem;;
+  font-size: 1rem;
+  margin-top: 0 rem 2rem;
 }
-
 
 .curved svg {
-    display: block;
+  display: block;
 }
 
-.top >svg {
-    display: block;
-    background: #000;
+.top > svg {
+  display: block;
+  background: #000;
 }

@@ -1,0 +1,148 @@
+/* CineHack.ai Theme Colors
+  - Primary Red: #ef4444 (text-red-500)
+  - Primary Blue: #60a5fa (text-blue-400)
+  - Dark Bg: gradient from #111827 (gray-900) to #000000
+  - Text: #d1d5db (gray-300), #9ca3af (gray-400)
+*/
+.mainCardContainer {
+  display: flex;
+  padding: 10px;
+}
+.cardContainer {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+.caredName {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+.cardValue {
+  font-size: 20px;
+  font-weight: 600;
+}
+.circleOne {
+  height: 120px;
+  width: 120px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 60px;
+  position: absolute;
+  right: -22px;
+  bottom: -36px;
+}
+.circleTwo {
+  height: 120px;
+  width: 120px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 60px;
+  position: absolute;
+  right: -59px;
+  top: -7px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: black;
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+}
+
+.swiper {
+  width: 100%;
+  padding: 60px 0;
+}
+
+.swiper-slide {
+  position: relative;
+  width: 400px;
+  height: 520px;
+  background: rgba(17, 24, 39, 0.8); /* dark gray-900 with transparency */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.6s ease;
+  user-select: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.swiper-slide-active {
+  border: 2px solid #ef4444; /* red-500 border for active slide */
+  box-shadow: 0 20px 40px rgba(239, 68, 68, 0.2); /* subtle red glow */
+  transform: scale(1.03);
+  transition: 0.6s ease-in-out;
+}
+
+.slide-1 {
+  background: #2fc5ff url("./member.png") no-repeat center / cover;
+}
+.slide-2 {
+  background: #2fc5ff url("./trainer.png") no-repeat 35% / cover;
+}
+.slide-3 {
+  background: #2fc5ff url("./vite.svg") no-repeat 40% / cover;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 100%;
+  padding: 25px 25px 30px;
+}
+
+/* Add styling for text content */
+.content {
+  padding: 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8) 50%);
+}
+
+.text h1 {
+  color: #ef4444; /* red-500 */
+  font-size: 1.875rem;
+  font-weight: 300;
+  margin-bottom: 12px;
+  letter-spacing: -0.025em;
+}
+
+.text p {
+  color: #d1d5db; /* gray-300 */
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Pagination styling */
+.swiper-pagination {
+  position: relative;
+  margin-top: 30px;
+}
+
+.swiper-pagination-bullet {
+  background: #374151; /* gray-700 */
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #60a5fa; /* blue-400 */
+}
