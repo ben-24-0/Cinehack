@@ -60,12 +60,12 @@ const steps = [
 
 export default function Timeline2() {
   return (
-    <section className="timeline-wrapper">
-      <div className=" ml-72 flex ">
-        <h2 className="text-4xl text-white md:text-5xl font-bold  mb-16 text-left ">
-          Timeline
+    <section className="timeline-wrapper ">
+      <div className="  flex justify-center">
+        <h2 className="text-4xl text-white md:text-5xl font-bold  mb-16  ">
+          TimeLine
         </h2>
-        <hr className="bg-amber-50" />
+      
       </div>
       <div className="timeline">
         {steps.map((s, idx) => (
