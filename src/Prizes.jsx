@@ -3,7 +3,7 @@ import React from "react";
 const PrizesAndOpportunities = () => {
   return (
     <div
-      
+      id="timeline"
       className="bg-black text-white py-16 px-8 min-h-14 flex flex-col justify-center"
     >
       <div className="max-w-6xl mx-auto">
@@ -19,7 +19,7 @@ const PrizesAndOpportunities = () => {
             <div className="mb-8 flex justify-center">
               <div className="w-20 h-20 bg-red-400 rounded-full flex items-center justify-center group-hover:animate-spin transition-transform duration-1000 transform-gpu">
                 <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-inner">
-                  <img src="./star.png" alt="" />
+                  <img src="./star.png" alt="star" />
                 </div>
               </div>
             </div>

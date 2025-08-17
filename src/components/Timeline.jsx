@@ -60,9 +60,8 @@ const steps = [
 
 export default function Timeline2() {
   return (
-    <section className="timeline-wrapper" id="timeline" >
-     
-      <div className=" ml-72 flex " >
+    <section className="timeline-wrapper">
+      <div className=" ml-72 flex ">
         <h2 className="text-4xl text-white md:text-5xl font-bold  mb-16 text-left ">
           Timeline
         </h2>

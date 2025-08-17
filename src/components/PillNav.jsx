@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import "./PillNav.css";
+import React from "react";
 
 const PillNav = ({
   logo,
@@ -281,15 +282,13 @@ const PillNav = ({
     href && !isExternalLink(href) && !isAnchorLink(href);
 
   const handleAnchorClick = (e, href) => {
+    if (!href || !href.startsWith("#")) return;
     e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop,
-        behavior: "smooth",
-      });
-      // Update active state
-      window.history.pushState({}, "", href);
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      // update URL hash without jump
+      history.replaceState(null, "", href);
     }
   };
 
