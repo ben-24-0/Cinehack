@@ -1,10 +1,10 @@
-import CineHackHeader from "./header";
+import CineHackHeader from "./CineHeader";
 import PillNav from "./components/PillNav";
-import logo from "../src/LOGO.png";
+import logo from "../src/star.png";
 import About from "./About";
 import CardSwiper from "./components/CardSwiper";
 import PrizesAndOpportunities from "./Prizes";
-import  Timeline  from "./components/Timeline";
+import Timeline from "./components/Timeline";
 import Footer from "./footer";
 function App() {
   return (
@@ -25,17 +25,16 @@ function App() {
         className="custom-nav"
         ease="power2.easeOut"
         baseColor="#000000"
-        pillColor="#ffffff"
+        pillColor="#a855f7"
         hoveredPillTextColor="#ffffff"
-        pillTextColor="#000000"
+        pillTextColor="#ffffff"
       />
       <CineHackHeader />
       <About />
       <PrizesAndOpportunities />
-      
-      <Timeline/>
-        <Footer/>
-        
+
+      <Timeline />
+      <Footer />
     </>
   );
 }

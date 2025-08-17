@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: "linear-gradient(180deg,#071028,#000)",
+        background: "linear-gradient(180deg,#581c87,#000)",
         color: "#cbd5e1",
         padding: "20px 16px",
       }}

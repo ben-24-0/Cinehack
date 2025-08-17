@@ -83,8 +83,8 @@ main {
 }
 
 .swiper-slide-active {
-  border: 2px solid #ef4444; /* red-500 border for active slide */
-  box-shadow: 0 20px 40px rgba(239, 68, 68, 0.2); /* subtle red glow */
+  border: 2px solid #a855f7; /* purple-500 border for active slide */
+  box-shadow: 0 20px 40px rgba(168, 85, 247, 0.2); /* subtle purple glow */
   transform: scale(1.03);
   transition: 0.6s ease-in-out;
 }
@@ -118,7 +118,7 @@ main {
 }
 
 .text h1 {
-  color: #ef4444; /* red-500 */
+  color: #a855f7; /* purple-500 */
   font-size: 1.875rem;
   font-weight: 300;
   margin-bottom: 12px;
@@ -144,5 +144,5 @@ main {
 }
 
 .swiper-pagination-bullet-active {
-  background: #60a5fa; /* blue-400 */
+  background: #a855f7; /* purple-500 */
 }

@@ -8,12 +8,12 @@ const CineHackHeader = () => {
       >
         <div className="container mx-auto px-6 py-20">
           {/* Top logos section */}
-          <div className="flex items-center justify-center mb-16 space-x-12">
+          <div className="flex items-center justify-self-end mb-10 content-between space-x-12">
             <div className="text-gray-400 text-sm font-medium">
-              PARTNER LOGOS
+                <img className="w-12 h-12" src="./paulyjr.png" alt="" />
             </div>
             <div className="text-gray-400 text-sm font-medium">
-              SPONSOR LOGOS
+              <img className="w-16 h-16 left-0" src="./iedc.png" alt="" />
             </div>
           </div>
 
@@ -22,9 +22,12 @@ const CineHackHeader = () => {
             <div className="flex-1 md:pr-8">
               {/* Main title */}
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-light mb-8 tracking-tight">
-                <span className="text-red-500">CineHack</span>
-                <span className="text-blue-400">.ai</span>
-                <span className="text-white ml-6">2025</span>
+                <span className="text-purple-500">Cine</span>
+                <span className="text-purple-100">Hack</span>
+                <span className="text-purple-400">.</span>
+                <span className="text-red-400">a</span>
+                <span className="text-blue-400">i</span>
+         
               </h1>
 
               {/* Subtitle */}
@@ -46,7 +49,7 @@ const CineHackHeader = () => {
                   <div className="text-4xl font-light text-white mb-2">
                     20-22
                   </div>
-                  <div className="text-red-500 text-sm font-medium tracking-wider">
+                  <div className="text-purple-500 text-sm font-medium tracking-wider">
                     OCT 2025
                   </div>
                 </div>
@@ -56,13 +59,13 @@ const CineHackHeader = () => {
                   <div className="text-lg text-gray-300 mb-2">
                     Federal Institute of Science And Technology
                   </div>
-                  <div className="text-blue-400 text-sm font-medium tracking-wider">
+                  <div className="text-purple-400 text-sm font-medium tracking-wider">
                     ANGAMALY
                   </div>
                 </div>
 
                 {/* Register button */}
-                <button className="bg-white text-black px-8 py-3 text-base font-medium hover:bg-gray-100 transition-colors">
+                <button className="bg-purple-600 text-white px-8 py-3 text-base font-medium hover:bg-purple-700 transition-colors">
                   REGISTER NOW
                 </button>
               </div>

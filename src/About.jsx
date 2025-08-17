@@ -3,8 +3,8 @@ import React from "react";
 const About = () => {
   return (
     <div id="about" className="min-h-screen bg-black font-sans">
-      {/* Container for the yellow section with wave SVGs. */}
-      <div className="bg-yellow-400">
+      {/* Container for the purple section with wave SVGs. */}
+      <div className="bg-purple-400">
         {/* Top SVG wave to create a curved top edge. */}
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220">
           <path

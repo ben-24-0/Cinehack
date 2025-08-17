@@ -17,23 +17,23 @@ const PrizesAndOpportunities = () => {
           {/* Card 1 */}
           <div className="text-center group cursor-pointer">
             <div className="mb-8 flex justify-center">
-              <div className="w-20 h-20 bg-red-400 rounded-full flex items-center justify-center group-hover:animate-spin transition-transform duration-1000 transform-gpu">
-                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-inner">
-                  <img src="./star.png" alt="star" />
+              <div className="w-20 h-20 bg-purple-400 rounded-full flex items-center justify-center group-hover:animate-spin transition-transform duration-1000 transform-gpu">
+                <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center shadow-inner">
+                  <img src="./member.png" alt="star" />
                 </div>
               </div>
             </div>
             <p className="text-lg md:text-xl leading-relaxed max-w-sm mx-auto">
-              Top teams will receive Exciting Prizes such as
+              Top teams will receive Exciting Prizes such as..
             </p>
           </div>
 
           {/* Card 2 */}
           <div className="text-center group cursor-pointer">
             <div className="mb-8 flex justify-center">
-              <div className="w-20 h-20 bg-orange-300 rounded-full flex items-center justify-center group-hover:animate-spin transition-transform duration-1000 transform-gpu">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center shadow-inner">
-                  <img src="./star.png" alt="" />
+              <div className="w-20 h-20 bg-purple-300 rounded-full flex items-center justify-center group-hover:animate-spin transition-transform duration-1000 transform-gpu">
+                <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center shadow-inner">
+                  <img src="./trainer.png" alt="" />
                 </div>
               </div>
             </div>
@@ -46,9 +46,9 @@ const PrizesAndOpportunities = () => {
           {/* Card 3 */}
           <div className="text-center group cursor-pointer">
             <div className="mb-8 flex justify-center">
-              <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center group-hover:animate-spin transition-transform duration-1000 transform-gpu">
-                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center shadow-inner">
-                  <img src="./star.png" alt="" />
+              <div className="w-20 h-20 bg-purple-500 rounded-full flex items-center justify-center group-hover:animate-spin transition-transform duration-1000 transform-gpu">
+                <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center shadow-inner">
+                  <img src="./medal.svg" alt="" />
                 </div>
               </div>
             </div>

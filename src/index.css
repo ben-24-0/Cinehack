@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .curved {
-  background: #fdc700;
+  background: oklch(71.4% 0.203 305.504);
   color: white;
   text-align: center;
 }
