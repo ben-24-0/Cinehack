@@ -1,4 +1,7 @@
 import React from "react";
+import LightRays from "./LightRays";
+import TextType from "./TextType";
+
 const CineHackHeader = () => {
   return (
     <>
@@ -6,33 +9,35 @@ const CineHackHeader = () => {
         id="home"
         className="min-h-screen bg-gradient-to-b from-gray-900 to-black relative"
       >
+        <LightRays />
         <div className="container mx-auto px-6 py-20">
-          {/* Top logos section */}
-          <div className="flex items-center justify-self-end mb-10 content-between space-x-12">
-            <div className="text-gray-400 text-sm font-medium">
-                <img className="w-12 h-12" src="./paulyjr.png" alt="" />
-            </div>
-            <div className="text-gray-400 text-sm font-medium">
-              <img className="w-16 h-16 left-0" src="./iedc.png" alt="" />
-            </div>
-          </div>
+          
 
           {/* Main content */}
           <div className="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto gap-12">
             <div className="flex-1 md:pr-8">
-              {/* Main title */}
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-light mb-8 tracking-tight">
+              {/* Main title (with colors preserved) */}
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-light mb-4 tracking-tight">
                 <span className="text-purple-500">Cine</span>
                 <span className="text-purple-100">Hack</span>
                 <span className="text-purple-400">.</span>
                 <span className="text-red-400">a</span>
                 <span className="text-blue-400">i</span>
-         
               </h1>
 
-              {/* Subtitle */}
-              <p className="text-xl md:text-2xl text-gray-300 font-light mb-8 tracking-wide">
-                India's Premier AI Cinema Hackathon
+              {/* Animated tagline */}
+              <p className="text-xl md:text-4xl text-gray-300 font-light mb-10 tracking-wide" style={{ fontFamily: "Skylens" }}>
+                <TextType
+                  text={["Lights. Camera. Algorithm."]}
+                  typingSpeed={70}
+                  deletingSpeed={40}
+                  pauseDuration={2000}
+                  loop={false}
+                  showCursor={true}
+                  hideCursorAfterFinish={true}   // 👈 will vanish cursor after typing
+
+                  className="inline-block"
+                />
               </p>
 
               {/* Description */}
@@ -75,18 +80,27 @@ const CineHackHeader = () => {
                 <p className="text-gray-500 text-sm mb-2">
                   Organized by IEDC FISAT
                 </p>
-                <p className="text-gray-600 text-xs"></p>
               </div>
             </div>
 
-            {/* Image on the right */}
+            {/* Image on the right
             <div className="flex-1 max-w-2xl">
               <img
                 src="./idea.png"
                 alt="Landing Page Visual"
                 className="w-full h-auto rounded-xl shadow-2xl"
               />
-            </div>
+            </div> */}
+            {/* Top logos section */}
+          {/* Floating sidebar logos */}
+                <div className="flex flex-col space-y-6 ml-12">
+                  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group">
+                    <img className="w-18 h-18 group-hover:scale-110 transition-transform duration-300" src="./paulyjr.png" alt="Pauly Jr Logo" />
+                  </div>
+                  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group">
+                    <img className="w-18 h-18 group-hover:scale-110 transition-transform duration-300" src="./iedc.png" alt="IEDC Logo" />
+                  </div>
+                </div>
           </div>
         </div>
       </div>

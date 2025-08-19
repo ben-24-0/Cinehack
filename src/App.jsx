@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import CineHackHeader from "./CineHeader";
 import PillNav from "./components/PillNav";
 import logo from "../src/star.png";
@@ -6,7 +7,44 @@ import CardSwiper from "./components/CardSwiper";
 import PrizesAndOpportunities from "./Prizes";
 import Timeline from "./components/Timeline";
 import Footer from "./footer";
+import LightsCameraAlgorithmLoader from "./components/Loader"; // Import the loader
+
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time - you can adjust this duration
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 12000); // 3 seconds loading time
+
+    // Optional: Also wait for all critical resources to load
+    const handleLoad = () => {
+      // Add a minimum loading time to ensure users see the animation
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 12000);
+    };
+
+    // Check if page is already loaded
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+    }
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []);
+
+  // Show loader while loading
+  if (isLoading) {
+    return <LightsCameraAlgorithmLoader />;
+  }
+
+  // Show main app content after loading
   return (
     <>
       <PillNav
@@ -14,11 +52,8 @@ function App() {
         logoAlt="FISAT Logo"
         items={[
           { label: "Home", href: "#home" },
-
           { label: "About", href: "#about" },
-
           { label: "Timeline", href: "#timeline" },
-
           { label: "Register", href: "#register" },
         ]}
         activeHref="#home"
@@ -32,7 +67,6 @@ function App() {
       <CineHackHeader />
       <About />
       <PrizesAndOpportunities />
-
       <Timeline />
       <Footer />
     </>
