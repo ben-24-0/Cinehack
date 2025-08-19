@@ -23,7 +23,7 @@ function App() {
       // Add a minimum loading time to ensure users see the animation
       setTimeout(() => {
         setIsLoading(false);
-      }, 12000);
+      }, 4000);
     };
 
     // Check if page is already loaded
