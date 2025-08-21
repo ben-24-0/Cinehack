@@ -3,6 +3,7 @@ import CineHackHeader from "./CineHeader";
 import PillNav from "./components/PillNav";
 import logo from "../src/star.png";
 import About from "./About";
+import Contact from "./Contact";
 import CardSwiper from "./components/CardSwiper";
 import PrizesAndOpportunities from "./Prizes";
 import Timeline from "./components/Timeline";
@@ -53,6 +54,7 @@ function App() {
         items={[
           { label: "Home", href: "#home" },
           { label: "About", href: "#about" },
+          { label:"Contact", href: "#contact" },
           { label: "Timeline", href: "#timeline" },
           { label: "Register", href: "#register" },
         ]}
@@ -68,6 +70,7 @@ function App() {
       <About />
       <PrizesAndOpportunities />
       <Timeline />
+      <Contact />
       <Footer />
     </>
   );
