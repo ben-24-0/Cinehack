@@ -5,18 +5,19 @@ const Contact = () => {
   return (
     <div id="contact" className="min-h-screen bg-black font-sans select-none">
       {/* Container for the purple section with wave SVGs. */}
-      <div className="bg-purple-400">
+      <div className="bg-[#0a1535]">
+
         {/* Top SVG wave */}
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220">
+        {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220">
           <path
-            fill="#000000"
+            fill="#0a1535"
             d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32V0H0Z"
           ></path>
-        </svg>
+        </svg> */}
 
         <div className="px-8 py-16 flex flex-col items-center gap-8">
           {/* Title */}
-          <h1 className="text-5xl font-bold mb-8 text-black text-center">
+          <h1 className="text-5xl font-bold mb-8 text-white text-center">
             Contact Us
           </h1>
 
@@ -117,7 +118,7 @@ const Contact = () => {
         {/* Google Maps Section */}
         <div className="px-8 pb-16">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-black mb-8">
+            <h2 className="text-3xl font-bold text-center text-white mb-8">
               Find Us Here
             </h2>
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
@@ -154,7 +155,7 @@ const Contact = () => {
         {/* Connect with Us Section */}
         <div className="px-8 pb-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-black mb-8">
+            <h2 className="text-3xl font-bold text-white mb-8">
               Connect with Us
             </h2>
             <div className="flex justify-center items-center gap-8 flex-wrap">
@@ -206,12 +207,12 @@ const Contact = () => {
         </div>
 
         {/* Bottom SVG wave */}
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220">
+        {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220">
           <path
-            fill="#000000"
+            fill="#0a1535"
             d="M0,32L48,53.3C96,75,192,117,288,138.7C384,160,480,160,576,149.3C672,139,768,117,864,122.7C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96V220H0Z"
           ></path>
-        </svg>
+        </svg> */}
       </div>
     </div>
   );

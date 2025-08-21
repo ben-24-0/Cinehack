@@ -70,8 +70,8 @@ const CineHackHeader = () => {
                 </div>
 
                 {/* Register button */}
-                <button className="bg-purple-600 text-white px-8 py-3 text-base font-medium hover:bg-purple-700 transition-colors">
-                  REGISTER NOW
+                <button className="bg-[#0a1535] text-white px-8 py-3 text-base font-medium hover:bg-[#0c1c4d] transition-colors">                 
+                 REGISTER NOW
                 </button>
               </div>
 
