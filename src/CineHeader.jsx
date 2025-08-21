@@ -97,8 +97,8 @@ const CineHackHeader = () => {
                   <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group">
                     <img className="w-18 h-18 group-hover:scale-110 transition-transform duration-300" src="./paulyjr.png" alt="Pauly Jr Logo" />
                   </div>
-                  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group">
-                    <img className="w-18 h-18 group-hover:scale-110 transition-transform duration-300" src="./iedc.png" alt="IEDC Logo" />
+                    <div className="w-20 h-20 bg-white backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group">
+                    <img className="w-18 h-18 group-hover:scale-110 transition-transform duration-300" src="./iedc_logo.png" alt="IEDC Logo" />
                   </div>
                 </div>
           </div>
