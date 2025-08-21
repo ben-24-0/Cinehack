@@ -75,12 +75,12 @@ const CineHackHeader = () => {
                 </button>
               </div>
 
-              {/* Organizer info */}
+              {/* Organizer info
               <div className="border-t border-gray-800 pt-6">
                 <p className="text-gray-500 text-sm mb-2">
                   Organized by IEDC FISAT
                 </p>
-              </div>
+              </div> */}
             </div>
 
             {/* Image on the right
