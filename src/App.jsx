@@ -4,6 +4,7 @@ import PillNav from "./components/PillNav";
 import logo from "../src/star.png";
 import About from "./About";
 import Contact from "./Contact";
+import ProblemStatements from "./ProblemStatements";
 import CardSwiper from "./components/CardSwiper";
 import PrizesAndOpportunities from "./Prizes";
 import Timeline from "./components/Timeline";
@@ -69,6 +70,7 @@ function App() {
       <CineHackHeader />
       <About />
       <PrizesAndOpportunities />
+      <ProblemStatements />
       <Timeline />
       <Contact />
       <Footer />
