@@ -23,57 +23,69 @@ const About = () => {
             </h1>
             {/* New container for the cards with improved styling */}
             <div className="flex flex-col gap-6 p-4">
-              {/* Card 1: Hackathon Details with new lightbulb SVG */}
-              <div
-                className="about-card p-6 rounded-lg shadow-xl text-center flex items-center justify-center gap-4"
-                style={{
-                  background: 'linear-gradient(45deg, #7c3aed, #9a67ea)',
-                  color: 'white',
-                  transform: 'rotate(-2deg)'
-                }}
+              {/* Card 1: Hackathon Details with glowing border */}
+              <div className="relative p-0.5 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 animate-pulse hover:animate-none group"
+                style={{ transform: 'rotate(-2deg)' }}
               >
-                <span className="text-5xl">🧠</span>
-                <div className="text-left">
-                  <h2 className="text-2xl font-bold mb-1">Hackathon</h2>
-                  <p>
-                    A 48 hour hackathon focused on AI in the film industry.
-                  </p>
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 blur-sm opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div
+                  className="about-card p-6 rounded-lg shadow-xl text-center flex items-center justify-center gap-4 relative"
+                  style={{
+                    background: 'linear-gradient(45deg, #0a1535, #1e3a8a)',
+                    color: 'white'
+                  }}
+                >
+                  <span className="text-5xl">🧠</span>
+                  <div className="text-left">
+                    <h2 className="text-2xl font-bold mb-1">Hackathon</h2>
+                    <p>
+                      A 48 hour hackathon focused on AI in the film industry.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              {/* Card 2: Prize Pool with a proper trophy SVG */}
-              <div
-                className="about-card p-6 rounded-lg shadow-xl text-center flex items-center justify-center gap-4"
-                style={{
-                  background: 'linear-gradient(45deg, #7c3aed, #9a67ea)',
-                  color: 'white',
-                  transform: 'rotate(2deg)'
-                }}
+              {/* Card 2: Prize Pool with glowing border */}
+              <div className="relative p-0.5 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 animate-pulse hover:animate-none group"
+                style={{ transform: 'rotate(2deg)' }}
               >
-                <span className="text-5xl">🏆</span>
-                <div className="text-left">
-                  <h2 className="text-2xl font-bold mb-1">Prizes</h2>
-                  <p>
-                    Win from a Prize Pool of Rs. 2,25,000.
-                  </p>
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 blur-sm opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div
+                  className="about-card p-6 rounded-lg shadow-xl text-center flex items-center justify-center gap-4 relative"
+                  style={{
+                    background: 'linear-gradient(45deg, #0a1535, #1e3a8a)',
+                    color: 'white'
+                  }}
+                >
+                  <span className="text-5xl">🏆</span>
+                  <div className="text-left">
+                    <h2 className="text-2xl font-bold mb-1">Prizes</h2>
+                    <p>
+                      Win from a Prize Pool of Rs. 2,25,000.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              {/* Card 3: Cultural Programs with Party Popper Emoji */}
-              <div
-                className="about-card p-6 rounded-lg shadow-xl text-center flex items-center justify-center gap-4"
-                style={{
-                  background: 'linear-gradient(45deg, #7c3aed, #9a67ea)',
-                  color: 'white',
-                  transform: 'rotate(-1deg)'
-                }}
+              {/* Card 3: Cultural Programs with glowing border */}
+              <div className="relative p-0.5 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 animate-pulse hover:animate-none group"
+                style={{ transform: 'rotate(-1deg)' }}
               >
-                <span className="text-5xl">🎉</span>
-                <div className="text-left">
-                  <h2 className="text-2xl font-bold mb-1">Activities</h2>
-                  <p>
-                    Enjoy Cultural Programs, Fun Activities and much more.
-                  </p>
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 blur-sm opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div
+                  className="about-card p-6 rounded-lg shadow-xl text-center flex items-center justify-center gap-4 relative"
+                  style={{
+                    background: 'linear-gradient(45deg, #0a1535, #1e3a8a)',
+                    color: 'white'
+                  }}
+                >
+                  <span className="text-5xl">🎉</span>
+                  <div className="text-left">
+                    <h2 className="text-2xl font-bold mb-1">Activities</h2>
+                    <p>
+                      Enjoy Cultural Programs, Fun Activities and much more.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

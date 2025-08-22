@@ -110,7 +110,7 @@ const Contact = () => {
                 <p className="text-green-400 font-mono text-sm">+91 75949 93674</p>
               </div>
               <div className="bg-black/30 rounded-lg p-4">
-                <p className="font-semibold text-white">Vishwam K</p>
+                <p className="font-semibold text-white">Vishwam Sajeev</p>
                 <p className="text-gray-400 text-sm">Student Coordinator</p>
                 <p className="text-green-400 font-mono text-sm">+91 70346 67695</p>
               </div>
