@@ -68,9 +68,36 @@ const CineHackHeader = () => {
                 </div>
 
                 {/* Register button */}
-                <button className="bg-[#0a1535] text-white px-8 py-3 text-base font-medium hover:bg-[#0c1c4d] transition-colors">                 
-                 REGISTER NOW
-                </button>
+         <a
+                    href="https://makemypass.com/event/cinehack-ai" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-block"
+                  >
+                    <button className="
+                      relative overflow-hidden
+                      bg-gradient-to-r from-[#0a1535] via-[#1e3a8a] to-[#0a1535] 
+                      text-white px-6 py-2.5 text-sm font-medium
+                      shadow-lg
+                      hover:shadow-xl hover:shadow-red-500/20
+                      active:scale-95
+                      transition-all duration-300 ease-out
+                      transform hover:-translate-y-0.5
+                      border border-transparent hover:border-red-500/30
+                      group-hover:bg-gradient-to-r group-hover:from-red-600 group-hover:via-red-500 group-hover:to-red-600
+                      before:absolute before:inset-0 
+                      before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent
+                      before:translate-x-[-100%] before:transition-transform before:duration-700
+                      hover:before:translate-x-[100%]
+                      backdrop-blur-sm
+                      whitespace-nowrap
+                    ">
+                      <span className="relative z-10 tracking-wider">
+                        REGISTER NOW
+                      </span>
+                    </button>
+                  </a>
+
               </div>
 
               {/* Organizer info
