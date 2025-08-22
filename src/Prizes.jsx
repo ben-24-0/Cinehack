@@ -63,7 +63,7 @@ const PrizesAndOpportunities = () => {
       bgColor: "bg-purple-500",
       innerBg: "bg-purple-600",
       Icon: Bed,
-      text: "Convenient on-campus accommodation for all participants.",
+      text: "Convenient accommodation for all participants.",
     },
     {
       bgColor: "bg-purple-400",

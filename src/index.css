@@ -46,3 +46,7 @@
   font-weight: normal;
   font-style: italic;
 }
+/* In your global CSS file */
+body, html {
+  overflow-x: hidden;
+}

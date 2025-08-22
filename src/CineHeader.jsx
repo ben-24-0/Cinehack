@@ -42,7 +42,7 @@ const CineHackHeader = () => {
 
               {/* Description */}
               <p className="text-lg text-gray-400 mb-12 leading-relaxed">
-               Step into the future of cinema at CineHack.ai, a 48-hour national film-tech hackathon where creativity meets code. From AI-powered editing tools to smart storytelling platforms, build projects that could reshape the way stories are told. Compete with the best minds, win from a ₹2.25 Lakh prize pool, and showcase your innovation to industry leaders and filmmakers.
+               Step into the future of cinema at CineHack.ai, a 48-hour national film-tech hackathon where creativity meets code. From AI-powered editing tools to smart storytelling platforms, build projects that could reshape the way stories are told. Compete with the best minds, win from a ₹2 Lakh + prize pool, and showcase your innovation to industry leaders and filmmakers.
               </p>
 
               {/* Event details */}
