@@ -92,52 +92,61 @@ const CineHackHeader = () => {
             {/* Top logos section */}
           {/* Floating sidebar logos */}
                 <div className="flex flex-col space-y-6 ml-12">
-                  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group">
-                  <a
-                      href="https://fisat.ac.in/" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group"
-                    >
-                    <img className="w-18 h-18 group-hover:scale-110 transition-transform duration-300" src="./fisat.png" alt="FISAT Logo" /></a>
-                  </div>
-                  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group">
-                  <a
-                      href="https://www.instagram.com/paulyjrpictures/" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group"
-                    >
-                    <img className="w-18 h-18 group-hover:scale-110 transition-transform duration-300" src="./paulyjr.png" alt="Pauly Jr Logo" /></a>
-                  </div>
-                    <div className="w-20 h-20 bg-white backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group">
-                    <a
-                      href="https://linktr.ee/fisatiedc"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group"
-                    >
-                    <img className="w-18 h-18 group-hover:scale-110 transition-transform duration-300" src="./iedc_logo.png" alt="IEDC Logo" /></a>
-                  </div>
-                  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group">
-                  <a
-                      href="https://iic.mic.gov.in/" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group"
-                    >
-                    <img className="w-18 h-18 group-hover:scale-110 transition-transform duration-300" src="./IIC-logo.webp" alt="IIC Logo" /></a>
-                  </div>
-                  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group">
-                  <a
-                      href="https://fisat.ac.in/alumni/" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group"
-                    >
-                    <img className="w-18 h-18 group-hover:scale-110 transition-transform duration-300" src="./fistaawhite.jpeg" alt="FISTAA Logo" /></a>
-                  </div>
-                </div>
+  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden">
+    <a
+      href="https://fisat.ac.in/" 
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full h-full flex items-center justify-center"
+    >
+      <img className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300" src="./fisat.png" alt="FISAT Logo" />
+    </a>
+  </div>
+  
+  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden">
+    <a
+      href="https://www.instagram.com/paulyjrpictures/" 
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full h-full flex items-center justify-center"
+    >
+      <img className="w-16 h-16 object-cover rounded-full group-hover:scale-110 transition-transform duration-300" src="./paulyjr.png" alt="Pauly Jr Logo" />
+    </a>
+  </div>
+  
+  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden">
+    <a
+      href="https://linktr.ee/fisatiedc"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full h-full flex items-center justify-center"
+    >
+      <img className="w-16 h-16 object-cover rounded-full group-hover:scale-110 transition-transform duration-300" src="./iedc.png" alt="IEDC Logo" />
+    </a>
+  </div>
+  
+  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden">
+    <a
+      href="https://iic.mic.gov.in/" 
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full h-full flex items-center justify-center"
+    >
+      <img className="w-16 h-16 object-cover rounded-full group-hover:scale-110 transition-transform duration-300" src="./IIC-logo.webp" alt="IIC Logo" />
+    </a>
+  </div>
+  
+  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden">
+    <a
+      href="https://fisat.ac.in/alumni/" 
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full h-full flex items-center justify-center"
+    >
+      <img className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300" src="./fistaawhite.jpeg" alt="FISTAA Logo" />
+    </a>
+  </div>
+</div>
           </div>
         </div>
       </div>

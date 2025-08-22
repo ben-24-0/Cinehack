@@ -88,11 +88,11 @@ const PrizesAndOpportunities = () => {
         <h2 className="text-4xl md:text-5xl font-bold mb-16 text-left">
           WHY JOIN ?
         </h2>
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-          {cards.map((card, i) => (
-            <WhyJoinCard key={i} {...card} />
-          ))}
-        </div>
+        <div className="grid md:grid-cols-4 gap-8 md:gap-12">
+  {cards.map((card, i) => (
+    <WhyJoinCard key={i} {...card} />
+  ))}
+</div>
       </div>
 
       {/* Custom spin animation for Y-axis */}
