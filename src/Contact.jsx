@@ -3,7 +3,7 @@ import { Instagram, Linkedin, Globe, Mail, MapPin, Phone } from "lucide-react";
 
 const Contact = () => {
   return (
-    <div id="contact" className="bg-gradient-to-b from-gray-900 to-black font-sans py-16">
+    <div id="contact" className="bg-gradient-to-b from-gray-900 to-black font-light py-16">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-12">
@@ -52,13 +52,13 @@ const Contact = () => {
             </div>
             <div className="space-y-3">
               <div>
-                <p className="text-green-300 font-semibold">IEDC Coordinator</p>
+                <p className="text-green-300 font-semibold">IEDC Nodal Officer</p>
                 <p className="text-gray-300">Mr. Benoy Abraham</p>
                 <p className="text-blue-300 font-mono">+91 85472 97021</p>
               </div>
               <div>
                 <p className="text-green-300 font-semibold">Student Coordinator</p>
-                <p className="text-gray-300">Naveen Jayprakash</p>
+                <p className="text-gray-300">Naveen Jayaprakash</p>
                 <p className="text-blue-300 font-mono">+91 80866 48992</p>
               </div>
             </div>
@@ -73,23 +73,24 @@ const Contact = () => {
             <h3 className="text-xl font-bold text-white mb-4 text-center">Faculty Coordinators</h3>
             <div className="space-y-4">
               <div className="bg-black/30 rounded-lg p-4">
+                <p className="font-semibold text-white">Mr. Tom Anto</p>
+                <p className="text-gray-400 text-sm">IEDC Nodal Officer</p>
+                <p className="text-green-400 font-mono text-sm">+91 90489 17395</p>
+              </div>
+              <div className="bg-black/30 rounded-lg p-4">
                 <p className="font-semibold text-white">Mr. Benoy Abraham</p>
-                <p className="text-gray-400 text-sm">IEDC Coordinator</p>
+                <p className="text-gray-400 text-sm">IEDC Nodal Officer</p>
                 <p className="text-green-400 font-mono text-sm">+91 85472 97021</p>
               </div>
               <div className="bg-black/30 rounded-lg p-4">
                 <p className="font-semibold text-white">Ms. Parvathy G Menon</p>
-                <p className="text-gray-400 text-sm">IEDC Coordinator</p>
+                <p className="text-gray-400 text-sm">IEDC Nodal Officer</p>
                 <p className="text-green-400 font-mono text-sm">+91 85473 78007</p>
               </div>
-              <div className="bg-black/30 rounded-lg p-4">
-                <p className="font-semibold text-white">Mr. Tom Anto</p>
-                <p className="text-gray-400 text-sm">IEDC TBI Coordinator</p>
-                <p className="text-green-400 font-mono text-sm">+91 90489 17395</p>
-              </div>
+              
               <div className="bg-black/30 rounded-lg p-4">
                 <p className="font-semibold text-white">Ms. Meera Treesa Mathews</p>
-                <p className="text-gray-400 text-sm">FISAT Coordinator</p>
+                <p className="text-gray-400 text-sm">FISAT Alumni Coordinator</p>
                 <p className="text-green-400 font-mono text-sm">+91 97468 79952</p>
               </div>
             </div>
@@ -100,7 +101,7 @@ const Contact = () => {
             <h3 className="text-xl font-bold text-white mb-4 text-center">Student Coordinators</h3>
             <div className="space-y-4">
               <div className="bg-black/30 rounded-lg p-4">
-                <p className="font-semibold text-white">Naveen Jayprakash</p>
+                <p className="font-semibold text-white">Naveen Jayaprakash</p>
                 <p className="text-gray-400 text-sm">Student Coordinator</p>
                 <p className="text-green-400 font-mono text-sm">+91 80866 48992</p>
               </div>
@@ -123,7 +124,7 @@ const Contact = () => {
           <h2 className="text-2xl font-bold text-white mb-6">Connect With Us</h2>
           <div className="flex justify-center items-center gap-4 flex-wrap">
             <a
-              href="https://instagram.com/fisatiedc"
+              href="https://instagram.com/cinehack.ai"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
@@ -153,7 +154,7 @@ const Contact = () => {
             </a>
 
             <a
-              href="mailto:fisatiedc@gmail.com"
+              href="mailto:cinehack.ai@gmail.com"
               className="flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-all duration-300 transform hover:scale-105"
             >
               <Mail size={20} />

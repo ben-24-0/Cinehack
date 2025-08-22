@@ -6,7 +6,7 @@ import Contact from "./Contact";
 import ProblemStatements from "./ProblemStatements";
 import CardSwiper from "./components/CardSwiper";
 import PrizesAndOpportunities from "./Prizes";
-import Timeline from "./components/Timeline";
+import Timeline from "./Timeline";
 import Footer from "./footer";
 import LightsCameraAlgorithmLoader from "./components/Loader"; // Import the loader
 
@@ -51,9 +51,11 @@ function App() {
         items={[
           { label: "Home", href: "#home" },
           { label: "About", href: "#about" },
-          { label:"Contact", href: "#contact" },
+              { label: "Problem Statements", href: "#problems" },
           { label: "Timeline", href: "#timeline" },
-          { label: "Problem Statements", href: "#problems" },
+      
+          { label:"Contact", href: "#contact" },
+          
         ]}
         activeHref="#home"
         className="custom-nav"

@@ -76,9 +76,9 @@ const ProblemStatements = () => {
   };
 
   return (
-    <div id="problems" className="bg-black text-white py-10 sm:py-16 lg:py-20 px-2 sm:px-4 overflow-visible">
+    <div id="problems" className="bg-black text-white py-10 sm:py-16 lg:py-20 px-2 sm:px-4 overflow-visible font-inter">
       <div className="max-w-full mx-auto px-2 sm:px-4">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 sm:mb-12 lg:mb-16 text-center tracking-wider px-4">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-8 sm:mb-12 lg:mb-16 text-center tracking-wide px-4 font-oswald">
           <span className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 bg-clip-text text-transparent">
             PROBLEM STATEMENTS
           </span>
@@ -125,12 +125,12 @@ const ProblemStatements = () => {
                       key={card.originalIndex}
                       className={`relative bg-black border-2 sm:border-4 border-gray-600 rounded-lg transition-all duration-700 ease-in-out flex-shrink-0 transform ${
                         isMobile
-                          ? 'w-full h-[350px] sm:h-[400px] border-yellow-400 shadow-xl shadow-yellow-400/30 z-10 opacity-100'
+                          ? 'w-full h-[380px] sm:h-[420px] border-yellow-400 shadow-xl shadow-yellow-400/30 z-10 opacity-100'
                           : isCenter 
-                          ? 'w-[280px] sm:w-[400px] lg:w-[600px] h-[300px] sm:h-[350px] lg:h-[400px] scale-105 sm:scale-110 border-yellow-400 shadow-2xl shadow-yellow-400/30 z-10 opacity-100' 
+                          ? 'w-[280px] sm:w-[400px] lg:w-[600px] h-[320px] sm:h-[370px] lg:h-[420px] scale-105 sm:scale-110 border-yellow-400 shadow-2xl shadow-yellow-400/30 z-10 opacity-100' 
                           : isLeft
-                          ? 'w-[200px] sm:w-[300px] lg:w-[450px] h-[240px] sm:h-[280px] lg:h-[320px] scale-90 opacity-60 -rotate-1 sm:-rotate-2 translate-x-2 sm:translate-x-4 lg:translate-x-8'
-                          : 'w-[200px] sm:w-[300px] lg:w-[450px] h-[240px] sm:h-[280px] lg:h-[320px] scale-90 opacity-60 rotate-1 sm:rotate-2 -translate-x-2 sm:-translate-x-4 lg:-translate-x-8'
+                          ? 'w-[200px] sm:w-[300px] lg:w-[450px] h-[260px] sm:h-[300px] lg:h-[340px] scale-90 opacity-60 -rotate-1 sm:-rotate-2 translate-x-2 sm:translate-x-4 lg:translate-x-8'
+                          : 'w-[200px] sm:w-[300px] lg:w-[450px] h-[260px] sm:h-[300px] lg:h-[340px] scale-90 opacity-60 rotate-1 sm:rotate-2 -translate-x-2 sm:-translate-x-4 lg:-translate-x-8'
                       }`}
                       style={!isMobile ? {
                         transform: isCenter 
@@ -161,7 +161,7 @@ const ProblemStatements = () => {
                       </div>
 
                       {/* Card Content */}
-                      <div className={`h-full flex flex-col justify-start text-left transition-all duration-700 ${
+                      <div className={`h-full flex flex-col justify-start text-left transition-all duration-700 font-roboto ${
                         isMobile 
                           ? 'px-4 py-4 opacity-100' 
                           : isCenter 
@@ -173,26 +173,26 @@ const ProblemStatements = () => {
                             isMobile || isCenter ? 'text-yellow-400 scale-100 sm:scale-110' : 'text-yellow-300'
                           }`}>
                             {React.cloneElement(card.icon, { 
-                              size: isMobile ? 24 : isCenter ? 32 : 24 
+                              size: isMobile ? 26 : isCenter ? 34 : 26 
                             })}
                           </div>
-                          <h3 className={`font-bold text-white leading-tight transition-all duration-500 ${
+                          <h3 className={`font-bold text-white leading-tight transition-all duration-500 font-poppins ${
                             isMobile 
-                              ? 'text-base sm:text-lg' 
+                              ? 'text-lg sm:text-xl' 
                               : isCenter 
-                              ? 'text-sm sm:text-base lg:text-lg' 
-                              : 'text-xs sm:text-sm'
+                              ? 'text-base sm:text-lg lg:text-xl' 
+                              : 'text-sm sm:text-base'
                           }`}>
                             {card.title}
                           </h3>
                         </div>
                         <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
-                          <p className={`text-gray-300 leading-relaxed transition-all duration-500 ${
+                          <p className={`text-gray-300 leading-relaxed transition-all duration-500 font-source-sans ${
                             isMobile 
-                              ? 'text-sm' 
+                              ? 'text-base' 
                               : isCenter 
-                              ? 'text-xs sm:text-sm' 
-                              : 'text-xs hidden sm:block'
+                              ? 'text-sm sm:text-base' 
+                              : 'text-xs sm:text-sm hidden sm:block'
                           }`}>
                             {isMobile && card.description.length > 300 
                               ? card.description.substring(0, 300) + '...' 
@@ -202,7 +202,7 @@ const ProblemStatements = () => {
                         
                         {/* Film Frame Number */}
                         <div className={`absolute bottom-1 sm:bottom-2 right-4 sm:right-6 lg:right-8 text-gray-500 font-mono ${
-                          isMobile ? 'text-xs' : 'text-xs'
+                          isMobile ? 'text-sm font-semibold' : 'text-sm font-semibold'
                         }`}>
                           {String(card.originalIndex + 1).padStart(2, '0')}
                         </div>
@@ -256,7 +256,7 @@ const ProblemStatements = () => {
         <div className="flex justify-center mt-4 sm:mt-6 px-4">
           <button
             onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm transition-all duration-500 shadow-lg touch-manipulation ${
+            className={`px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-full text-sm sm:text-base font-bold transition-all duration-500 shadow-lg touch-manipulation font-open-sans tracking-wide ${
               isAutoPlaying 
                 ? 'bg-yellow-500 text-black hover:bg-yellow-400 hover:shadow-yellow-400/30' 
                 : 'bg-gray-700 text-white hover:bg-gray-600 hover:shadow-gray-600/30'
@@ -266,6 +266,18 @@ const ProblemStatements = () => {
           </button>
         </div>
       </div>
+
+      {/* Google Fonts Import */}
+      <style jsx>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700;800;900&family=Source+Sans+Pro:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+        
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .font-roboto { font-family: 'Roboto', sans-serif; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        .font-source-sans { font-family: 'Source Sans Pro', sans-serif; }
+        .font-open-sans { font-family: 'Open Sans', sans-serif; }
+        .font-oswald { font-family: 'Oswald', sans-serif; }
+      `}</style>
     </div>
   );
 };

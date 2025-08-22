@@ -99,7 +99,6 @@ const PrizesAndOpportunities = () => {
 
   return (
     <div
-      id="timeline"
       className="bg-black text-white py-16 px-8 min-h-14 flex flex-col justify-center"
     >
       <div className="max-w-6xl mx-auto">

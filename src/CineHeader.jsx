@@ -99,8 +99,8 @@ const CineHackHeader = () => {
             </div>
 
             {/* Floating sidebar logos */}
-            <div className="flex flex-col space-y-6 ml-12">
-              <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden">
+            <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-6 ml-0 md:ml-12 overflow-x-auto md:overflow-x-visible">
+              <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden flex-shrink-0">
                 <a
                   href="https://fisat.ac.in/"
                   target="_blank"
@@ -111,7 +111,7 @@ const CineHackHeader = () => {
                 </a>
               </div>
               
-              <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden">
+              <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden flex-shrink-0">
                 <a
                   href="https://www.instagram.com/paulyjrpictures/"
                   target="_blank"
@@ -122,7 +122,7 @@ const CineHackHeader = () => {
                 </a>
               </div>
               
-              <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden">
+              <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden flex-shrink-0">
                 <a
                   href="https://linktr.ee/fisatiedc"
                   target="_blank"
@@ -133,18 +133,9 @@ const CineHackHeader = () => {
                 </a>
               </div>
               
-              <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden">
-                <a
-                  href="https://iic.mic.gov.in/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full h-full flex items-center justify-center"
-                >
-                  <img className="w-16 h-16 object-cover rounded-full group-hover:scale-110 transition-transform duration-300" src="./IIC-logo.webp" alt="IIC Logo" />
-                </a>
-              </div>
               
-              <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden">
+              
+              <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden flex-shrink-0">
                 <a
                   href="https://fisat.ac.in/alumni/"
                   target="_blank"
@@ -152,6 +143,16 @@ const CineHackHeader = () => {
                   className="w-16 h-16 rounded-full bg-white flex items-center justify-center"
                 >
                   <img className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300" src="./fistaa_bg.png" alt="FISTAA Logo" />
+                </a>
+              </div>
+              <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden flex-shrink-0">
+                <a
+                  href="https://iic.mic.gov.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full h-full flex items-center justify-center"
+                >
+                  <img className="w-16 h-16 object-cover rounded-full group-hover:scale-110 transition-transform duration-300" src="./IIC-logo.webp" alt="IIC Logo" />
                 </a>
               </div>
             </div>
