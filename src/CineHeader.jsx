@@ -124,9 +124,9 @@ const CineHackHeader = () => {
       href="https://fisat.ac.in/" 
       target="_blank"
       rel="noopener noreferrer"
-      className="w-full h-full flex items-center justify-center"
+      className="w-16 h-16 rounded-full bg-white flex items-center justify-center"
     >
-      <img className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300" src="./fisat.png" alt="FISAT Logo" />
+      <img className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300" src="./FISAT_LOGO.png" alt="FISAT Logo" />
     </a>
   </div>
   
@@ -168,9 +168,9 @@ const CineHackHeader = () => {
       href="https://fisat.ac.in/alumni/" 
       target="_blank"
       rel="noopener noreferrer"
-      className="w-full h-full flex items-center justify-center"
+      className="w-16 h-16 rounded-full bg-white flex items-center justify-center"
     >
-      <img className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300" src="./fistaawhite.jpeg" alt="FISTAA Logo" />
+      <img className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300" src="./fistaa_bg.png" alt="FISTAA Logo" />
     </a>
   </div>
 </div>
