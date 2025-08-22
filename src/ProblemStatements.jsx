@@ -21,7 +21,18 @@ const problemCards = [
 const ProblemStatements = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Auto-advance the carousel
   useEffect(() => {
@@ -35,61 +46,74 @@ const ProblemStatements = () => {
   }, [isAutoPlaying]);
 
   const nextSlide = () => {
-    if (isTransitioning) return;
     setCurrentIndex((prev) => (prev + 1) % problemCards.length);
     setIsAutoPlaying(false);
   };
 
   const prevSlide = () => {
-    if (isTransitioning) return;
     setCurrentIndex((prev) => (prev - 1 + problemCards.length) % problemCards.length);
     setIsAutoPlaying(false);
   };
 
   const getVisibleCards = () => {
     const cards = [];
-    for (let i = -1; i <= 1; i++) {
-      const index = (currentIndex + i + problemCards.length) % problemCards.length;
-      cards.push({ ...problemCards[index], originalIndex: index, position: i });
+    // On mobile, show only current card
+    if (isMobile) {
+      cards.push({ ...problemCards[currentIndex], originalIndex: currentIndex, position: 0 });
+    } else {
+      // On desktop/tablet, show 3 cards
+      for (let i = -1; i <= 1; i++) {
+        const index = (currentIndex + i + problemCards.length) % problemCards.length;
+        cards.push({ ...problemCards[index], originalIndex: index, position: i });
+      }
     }
     return cards;
   };
 
+  const getHoleCount = () => {
+    if (typeof window === 'undefined') return 20;
+    return Math.floor(window.innerWidth / 25);
+  };
+
   return (
-    <div id="problems" className="bg-black text-white py-20 px-4 overflow-visible">
-              <div className="max-w-full mx-auto px-4">
-        <h2 className="text-5xl md:text-6xl font-bold mb-16 text-center tracking-wider">
+    <div id="problems" className="bg-black text-white py-10 sm:py-16 lg:py-20 px-2 sm:px-4 overflow-visible">
+      <div className="max-w-full mx-auto px-2 sm:px-4">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 sm:mb-12 lg:mb-16 text-center tracking-wider px-4">
           <span className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 bg-clip-text text-transparent">
             PROBLEM STATEMENTS
           </span>
         </h2>
 
         {/* Film Roll Container */}
-        <div className="relative">
+        <div className="relative mx-2 sm:mx-4 lg:mx-8">
           {/* Film Strip Holes - Top */}
-          <div className="absolute top-0 left-0 right-0 h-8 bg-gray-800 flex justify-center items-center z-10">
-            <div className="flex space-x-4">
-              {Array.from({ length: 40 }).map((_, i) => (
-                <div key={i} className="w-4 h-4 bg-black rounded-full"></div>
+          <div className="absolute top-0 left-0 right-0 h-4 sm:h-6 lg:h-8 bg-gray-800 flex justify-center items-center z-10 overflow-hidden">
+            <div className="flex space-x-2 sm:space-x-3 lg:space-x-4">
+              {Array.from({ length: getHoleCount() }).map((_, i) => (
+                <div key={i} className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 bg-black rounded-full flex-shrink-0"></div>
               ))}
             </div>
           </div>
 
           {/* Main Carousel Area */}
-          <div className="bg-gray-800 px-12 py-20 relative overflow-visible">
-            <div className="flex justify-center items-center space-x-4 min-h-[500px] relative px-4">
+          <div className="bg-gray-800 px-2 sm:px-6 lg:px-12 py-8 sm:py-12 lg:py-20 relative overflow-visible">
+            <div className="flex justify-center items-center space-x-2 sm:space-x-4 min-h-[400px] sm:min-h-[450px] lg:min-h-[500px] relative">
               {/* Navigation Button - Left */}
               <button
                 onClick={prevSlide}
-                className="bg-yellow-500 hover:bg-yellow-400 text-black p-4 rounded-full transition-all duration-300 hover:scale-110 shadow-lg z-20 flex-shrink-0"
-                onMouseEnter={() => setIsAutoPlaying(false)}
-                onMouseLeave={() => setIsAutoPlaying(true)}
+                className="bg-yellow-500 hover:bg-yellow-400 text-black p-2 sm:p-3 lg:p-4 rounded-full transition-all duration-300 hover:scale-110 shadow-lg z-20 flex-shrink-0 touch-manipulation"
+                onMouseEnter={() => !isMobile && setIsAutoPlaying(false)}
+                onMouseLeave={() => !isMobile && setIsAutoPlaying(true)}
               >
-                <ChevronLeft size={28} />
+                <ChevronLeft size={isMobile ? 20 : 28} />
               </button>
 
               {/* Film Frames */}
-              <div className="flex items-center justify-center space-x-12 overflow-visible max-w-none relative" style={{ width: '80vw' }}>
+              <div className={`flex items-center justify-center overflow-visible relative ${
+                isMobile 
+                  ? 'w-full max-w-sm' 
+                  : 'space-x-4 sm:space-x-8 lg:space-x-12 w-full max-w-7xl'
+              }`}>
                 {getVisibleCards().map((card, index) => {
                   const position = card.position;
                   const isCenter = position === 0;
@@ -99,86 +123,119 @@ const ProblemStatements = () => {
                   return (
                     <div
                       key={card.originalIndex}
-                      className={`relative bg-black border-4 border-gray-600 rounded-lg transition-all duration-700 ease-in-out flex-shrink-0 transform ${
-                        isCenter 
-                          ? 'w-[600px] h-[400px] scale-110 border-yellow-400 shadow-2xl shadow-yellow-400/30 z-10 opacity-100' 
+                      className={`relative bg-black border-2 sm:border-4 border-gray-600 rounded-lg transition-all duration-700 ease-in-out flex-shrink-0 transform ${
+                        isMobile
+                          ? 'w-full h-[350px] sm:h-[400px] border-yellow-400 shadow-xl shadow-yellow-400/30 z-10 opacity-100'
+                          : isCenter 
+                          ? 'w-[280px] sm:w-[400px] lg:w-[600px] h-[300px] sm:h-[350px] lg:h-[400px] scale-105 sm:scale-110 border-yellow-400 shadow-2xl shadow-yellow-400/30 z-10 opacity-100' 
                           : isLeft
-                          ? 'w-[450px] h-[320px] scale-90 opacity-60 -rotate-2 translate-x-8'
-                          : 'w-[450px] h-[320px] scale-90 opacity-60 rotate-2 -translate-x-8'
-                      } ${isTransitioning ? 'blur-sm' : ''}`}
-                      style={{
+                          ? 'w-[200px] sm:w-[300px] lg:w-[450px] h-[240px] sm:h-[280px] lg:h-[320px] scale-90 opacity-60 -rotate-1 sm:-rotate-2 translate-x-2 sm:translate-x-4 lg:translate-x-8'
+                          : 'w-[200px] sm:w-[300px] lg:w-[450px] h-[240px] sm:h-[280px] lg:h-[320px] scale-90 opacity-60 rotate-1 sm:rotate-2 -translate-x-2 sm:-translate-x-4 lg:-translate-x-8'
+                      }`}
+                      style={!isMobile ? {
                         transform: isCenter 
                           ? 'translateZ(50px) scale(1.1)' 
                           : isLeft 
-                          ? 'translateZ(-30px) translateX(30px) rotateY(15deg) rotateZ(-2deg) scale(0.9)'
-                          : 'translateZ(-30px) translateX(-30px) rotateY(-15deg) rotateZ(2deg) scale(0.9)'
-                      }}
+                          ? 'translateZ(-30px) translateX(15px) rotateY(8deg) rotateZ(-1deg) scale(0.9)'
+                          : 'translateZ(-30px) translateX(-15px) rotateY(-8deg) rotateZ(1deg) scale(0.9)'
+                      } : {}}
                     >
-                    {/* Film Frame Perforations */}
-                    <div className="absolute left-0 top-0 bottom-0 w-6 bg-gray-700 flex flex-col justify-evenly items-center rounded-l-lg">
-                      {Array.from({ length: 8 }).map((_, i) => (
-                        <div key={i} className="w-3 h-3 bg-black rounded-full"></div>
-                      ))}
-                    </div>
-                    <div className="absolute right-0 top-0 bottom-0 w-6 bg-gray-700 flex flex-col justify-evenly items-center rounded-r-lg">
-                      {Array.from({ length: 8 }).map((_, i) => (
-                        <div key={i} className="w-3 h-3 bg-black rounded-full"></div>
-                      ))}
-                    </div>
+                      {/* Film Frame Perforations - Hidden on very small mobile */}
+                      <div className={`absolute left-0 top-0 bottom-0 bg-gray-700 flex flex-col justify-evenly items-center rounded-l-lg ${
+                        isMobile ? 'w-3 sm:w-4' : 'w-4 lg:w-6'
+                      } hidden xs:flex`}>
+                        {Array.from({ length: isMobile ? 6 : 8 }).map((_, i) => (
+                          <div key={i} className={`bg-black rounded-full ${
+                            isMobile ? 'w-1.5 h-1.5 sm:w-2 sm:h-2' : 'w-2 h-2 lg:w-3 lg:h-3'
+                          }`}></div>
+                        ))}
+                      </div>
+                      <div className={`absolute right-0 top-0 bottom-0 bg-gray-700 flex flex-col justify-evenly items-center rounded-r-lg ${
+                        isMobile ? 'w-3 sm:w-4' : 'w-4 lg:w-6'
+                      } hidden xs:flex`}>
+                        {Array.from({ length: isMobile ? 6 : 8 }).map((_, i) => (
+                          <div key={i} className={`bg-black rounded-full ${
+                            isMobile ? 'w-1.5 h-1.5 sm:w-2 sm:h-2' : 'w-2 h-2 lg:w-3 lg:h-3'
+                          }`}></div>
+                        ))}
+                      </div>
 
-                    {/* Card Content */}
-                    <div className={`px-6 py-6 h-full flex flex-col justify-start text-left transition-all duration-700 ${
-                      isCenter ? 'opacity-100' : 'opacity-85'
-                    }`}>
-                      <div className="mb-4 flex items-center">
-                        <div className={`mr-3 transition-all duration-500 ${
-                          isCenter ? 'text-yellow-400 scale-110' : 'text-yellow-300'
-                        }`}>
-                          {card.icon}
+                      {/* Card Content */}
+                      <div className={`h-full flex flex-col justify-start text-left transition-all duration-700 ${
+                        isMobile 
+                          ? 'px-4 py-4 opacity-100' 
+                          : isCenter 
+                          ? 'px-4 sm:px-6 py-4 sm:py-6 opacity-100' 
+                          : 'px-3 sm:px-4 py-3 sm:py-4 opacity-85'
+                      }`}>
+                        <div className="mb-3 sm:mb-4 flex items-start sm:items-center">
+                          <div className={`mr-2 sm:mr-3 transition-all duration-500 flex-shrink-0 mt-1 sm:mt-0 ${
+                            isMobile || isCenter ? 'text-yellow-400 scale-100 sm:scale-110' : 'text-yellow-300'
+                          }`}>
+                            {React.cloneElement(card.icon, { 
+                              size: isMobile ? 24 : isCenter ? 32 : 24 
+                            })}
+                          </div>
+                          <h3 className={`font-bold text-white leading-tight transition-all duration-500 ${
+                            isMobile 
+                              ? 'text-base sm:text-lg' 
+                              : isCenter 
+                              ? 'text-sm sm:text-base lg:text-lg' 
+                              : 'text-xs sm:text-sm'
+                          }`}>
+                            {card.title}
+                          </h3>
                         </div>
-                        <h3 className={`font-bold text-white leading-tight transition-all duration-500 ${
-                          isCenter ? 'text-lg' : 'text-base'
-                        }`}>{card.title}</h3>
-                      </div>
-                      <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
-                        <p className={`text-gray-300 leading-relaxed transition-all duration-500 ${
-                          isCenter ? 'text-sm' : 'text-xs'
-                        }`}>{card.description}</p>
-                      </div>
-                      
-                      {/* Film Frame Number */}
-                      <div className="absolute bottom-2 right-8 text-xs text-gray-500 font-mono">
-                        {String(card.originalIndex + 1).padStart(2, '0')}
+                        <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
+                          <p className={`text-gray-300 leading-relaxed transition-all duration-500 ${
+                            isMobile 
+                              ? 'text-sm' 
+                              : isCenter 
+                              ? 'text-xs sm:text-sm' 
+                              : 'text-xs hidden sm:block'
+                          }`}>
+                            {isMobile && card.description.length > 300 
+                              ? card.description.substring(0, 300) + '...' 
+                              : card.description}
+                          </p>
+                        </div>
+                        
+                        {/* Film Frame Number */}
+                        <div className={`absolute bottom-1 sm:bottom-2 right-4 sm:right-6 lg:right-8 text-gray-500 font-mono ${
+                          isMobile ? 'text-xs' : 'text-xs'
+                        }`}>
+                          {String(card.originalIndex + 1).padStart(2, '0')}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )})}
+                  );
+                })}
               </div>
 
               {/* Navigation Button - Right */}
               <button
                 onClick={nextSlide}
-                className="bg-yellow-500 hover:bg-yellow-400 text-black p-4 rounded-full transition-all duration-300 hover:scale-110 shadow-lg z-20 flex-shrink-0"
-                onMouseEnter={() => setIsAutoPlaying(false)}
-                onMouseLeave={() => setIsAutoPlaying(true)}
+                className="bg-yellow-500 hover:bg-yellow-400 text-black p-2 sm:p-3 lg:p-4 rounded-full transition-all duration-300 hover:scale-110 shadow-lg z-20 flex-shrink-0 touch-manipulation"
+                onMouseEnter={() => !isMobile && setIsAutoPlaying(false)}
+                onMouseLeave={() => !isMobile && setIsAutoPlaying(true)}
               >
-                <ChevronRight size={28} />
+                <ChevronRight size={isMobile ? 20 : 28} />
               </button>
             </div>
           </div>
 
           {/* Film Strip Holes - Bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-8 bg-gray-800 flex justify-center items-center z-10">
-            <div className="flex space-x-4">
-              {Array.from({ length: 50 }).map((_, i) => (
-                <div key={i} className="w-4 h-4 bg-black rounded-full"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-4 sm:h-6 lg:h-8 bg-gray-800 flex justify-center items-center z-10 overflow-hidden">
+            <div className="flex space-x-2 sm:space-x-3 lg:space-x-4">
+              {Array.from({ length: getHoleCount() }).map((_, i) => (
+                <div key={i} className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 bg-black rounded-full flex-shrink-0"></div>
               ))}
             </div>
           </div>
         </div>
 
         {/* Film Roll Indicators */}
-        <div className="flex justify-center mt-12 space-x-3">
+        <div className="flex justify-center mt-6 sm:mt-8 lg:mt-12 space-x-2 sm:space-x-3 px-4 flex-wrap">
           {problemCards.map((_, index) => (
             <button
               key={index}
@@ -186,7 +243,7 @@ const ProblemStatements = () => {
                 setCurrentIndex(index);
                 setIsAutoPlaying(false);
               }}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 mb-2 ${
                 index === currentIndex 
                   ? 'bg-yellow-400 scale-125' 
                   : 'bg-gray-600 hover:bg-gray-400'
@@ -196,10 +253,10 @@ const ProblemStatements = () => {
         </div>
 
         {/* Auto-play Indicator */}
-        <div className="flex justify-center mt-6">
+        <div className="flex justify-center mt-4 sm:mt-6 px-4">
           <button
             onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-            className={`px-6 py-3 rounded-full text-sm transition-all duration-500 shadow-lg ${
+            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm transition-all duration-500 shadow-lg touch-manipulation ${
               isAutoPlaying 
                 ? 'bg-yellow-500 text-black hover:bg-yellow-400 hover:shadow-yellow-400/30' 
                 : 'bg-gray-700 text-white hover:bg-gray-600 hover:shadow-gray-600/30'

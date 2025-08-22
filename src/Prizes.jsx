@@ -8,7 +8,7 @@ import {
   Bed,
   MusicNotes,
   Sparkle,
-} from "@phosphor-icons/react";
+} from "phosphor-react";
 
 const WhyJoinCard = ({ bgColor, innerBg, Icon, text }) => (
   <div className="text-center group cursor-pointer">

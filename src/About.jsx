@@ -15,30 +15,29 @@ const About = () => {
         </svg> */}
 
         {/* Main content container. */}
-        <div className="curved px-8 py-16 flex flex-col lg:flex-row items-center justify-center gap-8">
+        <div className="curved px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 flex flex-col lg:flex-row items-center justify-center gap-6 md:gap-8">
           {/* This div contains the heading and the cards. */}
           <div className="flex-1 max-w-4xl text-content text-center lg:text-left">
-            <h1 className="text-5xl font-bold mb-8 text-white">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-white leading-tight">
               WELCOME TO CINEHACK.AI
             </h1>
             {/* New container for the cards with improved styling */}
-            <div className="flex flex-col gap-6 p-4">
+            <div className="flex flex-col gap-4 md:gap-6 p-2 md:p-4">
               {/* Card 1: Hackathon Details with glowing border */}
-              <div className="relative p-0.5 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 animate-pulse hover:animate-none group"
-                style={{ transform: 'rotate(-2deg)' }}
+              <div className="relative p-0.5 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 animate-pulse hover:animate-none group transform -rotate-1 sm:-rotate-2"
               >
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 blur-sm opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div
-                  className="about-card p-6 rounded-lg shadow-xl text-center flex items-center justify-center gap-4 relative"
+                  className="about-card p-4 md:p-6 rounded-lg shadow-xl text-center flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 relative"
                   style={{
                     background: 'linear-gradient(45deg, #0a1535, #1e3a8a)',
                     color: 'white'
                   }}
                 >
-                  <span className="text-5xl">🧠</span>
-                  <div className="text-left">
-                    <h2 className="text-2xl font-bold mb-1">Hackathon</h2>
-                    <p>
+                  <span className="text-3xl sm:text-4xl md:text-5xl">🧠</span>
+                  <div className="text-center sm:text-left">
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-1">Hackathon</h2>
+                    <p className="text-sm sm:text-base">
                       A 48 hour hackathon focused on AI in the film industry.
                     </p>
                   </div>
@@ -46,21 +45,20 @@ const About = () => {
               </div>
 
               {/* Card 2: Prize Pool with glowing border */}
-              <div className="relative p-0.5 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 animate-pulse hover:animate-none group"
-                style={{ transform: 'rotate(2deg)' }}
+              <div className="relative p-0.5 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 animate-pulse hover:animate-none group transform rotate-1 sm:rotate-2"
               >
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 blur-sm opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div
-                  className="about-card p-6 rounded-lg shadow-xl text-center flex items-center justify-center gap-4 relative"
+                  className="about-card p-4 md:p-6 rounded-lg shadow-xl text-center flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 relative"
                   style={{
                     background: 'linear-gradient(45deg, #0a1535, #1e3a8a)',
                     color: 'white'
                   }}
                 >
-                  <span className="text-5xl">🏆</span>
-                  <div className="text-left">
-                    <h2 className="text-2xl font-bold mb-1">Prizes</h2>
-                    <p>
+                  <span className="text-3xl sm:text-4xl md:text-5xl">🏆</span>
+                  <div className="text-center sm:text-left">
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-1">Prizes</h2>
+                    <p className="text-sm sm:text-base">
                       Win from a Prize Pool of Rs. 2,25,000.
                     </p>
                   </div>
@@ -68,21 +66,20 @@ const About = () => {
               </div>
 
               {/* Card 3: Cultural Programs with glowing border */}
-              <div className="relative p-0.5 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 animate-pulse hover:animate-none group"
-                style={{ transform: 'rotate(-1deg)' }}
+              <div className="relative p-0.5 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 animate-pulse hover:animate-none group transform -rotate-0.5 sm:-rotate-1"
               >
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 blur-sm opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div
-                  className="about-card p-6 rounded-lg shadow-xl text-center flex items-center justify-center gap-4 relative"
+                  className="about-card p-4 md:p-6 rounded-lg shadow-xl text-center flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 relative"
                   style={{
                     background: 'linear-gradient(45deg, #0a1535, #1e3a8a)',
                     color: 'white'
                   }}
                 >
-                  <span className="text-5xl">🎉</span>
-                  <div className="text-left">
-                    <h2 className="text-2xl font-bold mb-1">Activities</h2>
-                    <p>
+                  <span className="text-3xl sm:text-4xl md:text-5xl">🎉</span>
+                  <div className="text-center sm:text-left">
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-1">Activities</h2>
+                    <p className="text-sm sm:text-base">
                       Enjoy Cultural Programs, Fun Activities and much more.
                     </p>
                   </div>
@@ -92,11 +89,13 @@ const About = () => {
           </div>
 
           {/* This is the image. */}
-          <img
-            src="./About.png"
-            alt="An image representing CineHack.ai"
-            className="w-full max-w-xl rounded-lg"
-          />
+          <div className="w-full lg:w-auto flex justify-center">
+            <img
+              src="./About.png"
+              alt="An image representing CineHack.ai"
+              className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl rounded-lg"
+            />
+          </div>
         </div>
 
         {/* Bottom SVG wave. */}
