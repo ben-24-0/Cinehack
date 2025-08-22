@@ -1,22 +1,41 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 import "swiper/css";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
+import { useState, useEffect } from "react";
 import "./CardSwiper.css"   
+
 const CardSlider = () => {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsSmallScreen(window.innerWidth <= 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
   return (
     <main>
         
       <div className="container">
         <Swiper
-          // install Swiper modules
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
           grabCursor={true}
           initialSlide={2}
           centeredSlides={true}
           slidesPerView="auto"
           speed={900}
           pagination={{ el: ".swiper-pagination", clickable: true }}
+          autoplay={isSmallScreen ? {
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          } : false}
           breakpoints={{
             320: { spaceBetween: 40 },
             430: { spaceBetween: 50 },
