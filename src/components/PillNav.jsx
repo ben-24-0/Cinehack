@@ -314,7 +314,7 @@ const PillNav = ({
         style={cssVars}
       >
         {/* Replace logo with theme toggle button */}
-        <button
+        {/*<button
           className="pill-logo theme-toggle-button"
           onClick={onThemeToggle}
           aria-label="Toggle dark/light mode"
@@ -327,7 +327,7 @@ const PillNav = ({
           <span className="theme-icon">
             {isDarkMode ? '☀️' : '🌙'}
           </span>
-        </button>
+        </button> */}
 
         <div className="pill-nav-items desktop-only" ref={navItemsRef}>
           <ul className="pill-list" role="menubar">
