@@ -188,14 +188,12 @@ const ProblemStatements = () => {
                         </div>
                         <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
                           <p className={`text-gray-300 leading-relaxed transition-all duration-500 font-source-sans ${
-                            isMobile 
-                              ? 'text-base' 
-                              : isCenter 
-                              ? 'text-sm sm:text-base' 
-                              : 'text-xs sm:text-sm hidden sm:block'
+  isMobile 
+    ? 'text-base overflow-y-auto max-h-[400px]'  // allow scrolling on mobile
+    : 'text-sm sm:text-base'
                           }`}>
                             {isMobile && card.description.length > 300 
-                              ? card.description.substring(0, 300) + '...' 
+                              ? card.description
                               : card.description}
                           </p>
                         </div>
