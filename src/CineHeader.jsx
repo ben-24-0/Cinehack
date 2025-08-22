@@ -42,9 +42,7 @@ const CineHackHeader = () => {
 
               {/* Description */}
               <p className="text-lg text-gray-400 mb-12 leading-relaxed">
-                Build revolutionary AI-powered cinema experiences in 24 hours.
-                From intelligent video editing tools to AI-driven storytelling
-                platforms.
+               Step into the future of cinema at CineHack.ai, a 48-hour national film-tech hackathon where creativity meets code. From AI-powered editing tools to smart storytelling platforms, build projects that could reshape the way stories are told. Compete with the best minds, win from a ₹2 Lakh + prize pool, and showcase your innovation to industry leaders and filmmakers.
               </p>
 
               {/* Event details */}
@@ -52,7 +50,7 @@ const CineHackHeader = () => {
                 {/* Date */}
                 <div>
                   <div className="text-4xl font-light text-white mb-2">
-                    20-22
+                    4-6
                   </div>
                   <div className="text-purple-500 text-sm font-medium tracking-wider">
                     OCT 2025
@@ -65,22 +63,49 @@ const CineHackHeader = () => {
                     Federal Institute of Science And Technology
                   </div>
                   <div className="text-purple-400 text-sm font-medium tracking-wider">
-                    ANGAMALY
+                    Mookanoor, Angamaly, Ernakulam, India
                   </div>
                 </div>
 
                 {/* Register button */}
-                <button className="bg-purple-600 text-white px-8 py-3 text-base font-medium hover:bg-purple-700 transition-colors">
-                  REGISTER NOW
-                </button>
+         <a
+                    href="https://makemypass.com/event/cinehack-ai" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-block"
+                  >
+                    <button className="
+                      relative overflow-hidden
+                      bg-gradient-to-r from-[#0a1535] via-[#1e3a8a] to-[#0a1535] 
+                      text-white px-6 py-2.5 text-sm font-medium
+                      shadow-lg
+                      hover:shadow-xl hover:shadow-red-500/20
+                      active:scale-95
+                      transition-all duration-300 ease-out
+                      transform hover:-translate-y-0.5
+                      border border-transparent hover:border-red-500/30
+                      group-hover:bg-gradient-to-r group-hover:from-red-600 group-hover:via-red-500 group-hover:to-red-600
+                      before:absolute before:inset-0 
+                      before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent
+                      before:translate-x-[-100%] before:transition-transform before:duration-700
+                      hover:before:translate-x-[100%]
+                      backdrop-blur-sm
+                      whitespace-nowrap
+                    ">
+                      <span className="relative z-10 tracking-wider">
+                        REGISTER NOW
+                      </span>
+                    </button>
+                  </a>
+
               </div>
 
-              {/* Organizer info */}
+              {/* Organizer info
               <div className="border-t border-gray-800 pt-6">
                 <p className="text-gray-500 text-sm mb-2">
                   Organized by IEDC FISAT
                 </p>
-              </div>
+              </div> */}
             </div>
 
             {/* Image on the right
@@ -94,13 +119,61 @@ const CineHackHeader = () => {
             {/* Top logos section */}
           {/* Floating sidebar logos */}
                 <div className="flex flex-col space-y-6 ml-12">
-                  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group">
-                    <img className="w-18 h-18 group-hover:scale-110 transition-transform duration-300" src="./paulyjr.png" alt="Pauly Jr Logo" />
-                  </div>
-                  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group">
-                    <img className="w-18 h-18 group-hover:scale-110 transition-transform duration-300" src="./iedc.png" alt="IEDC Logo" />
-                  </div>
-                </div>
+  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden">
+    <a
+      href="https://fisat.ac.in/" 
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full h-full flex items-center justify-center"
+    >
+      <img className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300" src="./fisat.png" alt="FISAT Logo" />
+    </a>
+  </div>
+  
+  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden">
+    <a
+      href="https://www.instagram.com/paulyjrpictures/" 
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full h-full flex items-center justify-center"
+    >
+      <img className="w-16 h-16 object-cover rounded-full group-hover:scale-110 transition-transform duration-300" src="./paulyjr.png" alt="Pauly Jr Logo" />
+    </a>
+  </div>
+  
+  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden">
+    <a
+      href="https://linktr.ee/fisatiedc"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full h-full flex items-center justify-center"
+    >
+      <img className="w-16 h-16 object-cover rounded-full group-hover:scale-110 transition-transform duration-300" src="./iedc.png" alt="IEDC Logo" />
+    </a>
+  </div>
+  
+  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden">
+    <a
+      href="https://iic.mic.gov.in/" 
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full h-full flex items-center justify-center"
+    >
+      <img className="w-16 h-16 object-cover rounded-full group-hover:scale-110 transition-transform duration-300" src="./IIC-logo.webp" alt="IIC Logo" />
+    </a>
+  </div>
+  
+  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden">
+    <a
+      href="https://fisat.ac.in/alumni/" 
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full h-full flex items-center justify-center"
+    >
+      <img className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300" src="./fistaawhite.jpeg" alt="FISTAA Logo" />
+    </a>
+  </div>
+</div>
           </div>
         </div>
       </div>

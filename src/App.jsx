@@ -3,6 +3,8 @@ import CineHackHeader from "./CineHeader";
 import PillNav from "./components/PillNav";
 import logo from "../src/star.png";
 import About from "./About";
+import Contact from "./Contact";
+import ProblemStatements from "./ProblemStatements";
 import CardSwiper from "./components/CardSwiper";
 import PrizesAndOpportunities from "./Prizes";
 import Timeline from "./components/Timeline";
@@ -53,6 +55,7 @@ function App() {
         items={[
           { label: "Home", href: "#home" },
           { label: "About", href: "#about" },
+          { label:"Contact", href: "#contact" },
           { label: "Timeline", href: "#timeline" },
           { label: "Register", href: "#register" },
         ]}
@@ -60,14 +63,16 @@ function App() {
         className="custom-nav"
         ease="power2.easeOut"
         baseColor="#000000"
-        pillColor="#a855f7"
+        pillColor="#0a1535"
         hoveredPillTextColor="#ffffff"
         pillTextColor="#ffffff"
       />
       <CineHackHeader />
       <About />
       <PrizesAndOpportunities />
+      <ProblemStatements />
       <Timeline />
+      <Contact />
       <Footer />
     </>
   );

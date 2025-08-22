@@ -2,54 +2,63 @@ import React from "react";
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const linkStyle = {
-    color: "#cbd5e1",
-    textDecoration: "none",
-    fontSize: 14,
-    opacity: 0.9,
-  };
 
   return (
-    <footer
-      style={{
-        background: "linear-gradient(180deg,#581c87,#000)",
-        color: "#cbd5e1",
-        padding: "20px 16px",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 1100,
-          margin: "0 auto",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 12,
-          flexWrap: "wrap",
-        }}
-      >
-        <div style={{ fontWeight: 700, fontSize: 16 }}>CineHack.ai</div>
+    <footer className="bg-black text-slate-300 py-8 px-4">
+      <div className="max-w-6xl mx-auto">
+        {/* Main Footer Content */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-6">
+          
+          {/* Brand */}
+          <div className="text-white font-bold text-xl">
+            CineHack.ai
+          </div>
 
-        <nav style={{ display: "flex", gap: 18 }}>
-          <a href="#home" style={linkStyle}>
-            Home
-          </a>
-          <a href="#about" style={linkStyle}>
-            About
-          </a>
-          <a href="#prizes" style={linkStyle}>
-            Prizes
-          </a>
-          <a href="#timeline" style={linkStyle}>
-            Timeline
-          </a>
-          <a href="#contact" style={linkStyle}>
-            Contact
-          </a>
-        </nav>
+          {/* Navigation Links */}
+          <nav className="flex flex-wrap gap-6 justify-center">
+            <a 
+              href="#home" 
+              className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
+            >
+              Home
+            </a>
+            <a 
+              href="#about" 
+              className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
+            >
+              About
+            </a>
+            <a 
+              href="#prizes" 
+              className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
+            >
+              Prizes
+            </a>
+            <a 
+              href="#timeline" 
+              className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
+            >
+              Timeline
+            </a>
+            <a 
+              href="#contact" 
+              className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
+            >
+              Contact
+            </a>
+          </nav>
 
-        <div style={{ fontSize: 14, color: "#94a3b8" }}>
-          © {year} CineHack.ai. All rights reserved.
+          {/* Copyright */}
+          <div className="text-white/60 text-sm">
+            © {year} CineHack.ai. All rights reserved.
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-white/20 pt-4">
+          <div className="text-center text-white/50 text-xs">
+            Organized by IEDC FISAT | Innovation Excellence Development Centre
+          </div>
         </div>
       </div>
     </footer>

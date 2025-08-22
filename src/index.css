@@ -1,7 +1,21 @@
 @import "tailwindcss";
 
+/* 🎨 Custom Color Variables */
+:root {
+  --downriver: #081a3d;
+  --astronaut: #2f417f;
+  --biscay: #162b62;
+  --waikawa-gray: #6576ae;
+  --black-pearl: #040d22;
+  --butterfly-bush: #6c559c;
+  --port-gore: #252851;
+  --east-bay: #3c386a;
+  --san-juan: #32446b;
+  --horizon: #5c7c9c;
+}
+
 .curved {
-  background: oklch(71.4% 0.203 305.504);
+  background: var(--downriver); /* Dark rich blue */
   color: white;
   text-align: center;
 }
@@ -10,9 +24,10 @@
   font-size: 4rem;
   margin-top: 0;
 }
+
 .curved p {
   font-size: 1rem;
-  margin-top: 0 rem 2rem;
+  margin: 0 0 2rem 0;
 }
 
 .curved svg {
@@ -21,11 +36,17 @@
 
 .top > svg {
   display: block;
-  background: #000;
+  background: var(--black-pearl); /* Deep black-blue background */
 }
+
+/* Custom font */
 @font-face {
   font-family: "Skylens";
   src: url("/fonts/Corptic DEMO.otf") format("opentype");
   font-weight: normal;
   font-style: italic;
+}
+/* In your global CSS file */
+body, html {
+  overflow-x: hidden;
 }
