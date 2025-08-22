@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const timelineData = [
   {
     id: 1,
-    stage: "01",
+    stage: "#1",
     title: "Registrations Open",
     description: "The registration forms are released",
     date: "Till September 22, 2025",
@@ -13,7 +13,7 @@ const timelineData = [
   },
   {
     id: 2,
-    stage: "02", 
+    stage: "#2", 
     title: "Shortlisting",
     description: "Official unveiling of the GenAI Hackathon",
     date: "September 22, 2025 - September 25, 2025",
@@ -23,7 +23,7 @@ const timelineData = [
   },
   {
     id: 3,
-    stage: "03",
+    stage: "#3",
     title: "Orientation", 
     description: "Last call to submit your ideas and solutions.",
     date: "September 25, 2025 - October 1, 2025",
@@ -33,7 +33,7 @@ const timelineData = [
   },
   {
     id: 4,
-    stage: "04",
+    stage: "#4",
     title: "Arrival of Participants in Campus",
     description: "Top entries selected for the next phase.",
     date: "October 3, 2025, 4:00 PM",
@@ -43,7 +43,7 @@ const timelineData = [
   },
   {
     id: 5,
-    stage: "05",
+    stage: "#5",
     title: "Hackathon Commences",
     description: "Guidelines and resources for selected teams.",
     date: "October 4, 2025",
@@ -53,7 +53,7 @@ const timelineData = [
   },
   {
     id: 6,
-    stage: "06",
+    stage: "#6",
     title: "Hackathon Showdown",
     description: "48 Hour Hackathon Ends",
     date: "October 6, 2025",
@@ -108,7 +108,7 @@ export default function ProfessionalTimeline() {
   };
 
   return (
-    <div className="min-h-screen bg-black py-20 px-4 relative overflow-hidden">
+    <div id="timeline" className="min-h-screen bg-black py-20 px-4 relative overflow-hidden">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-gray-900/30 to-black"></div>
       

@@ -11,7 +11,12 @@ export default function Footer() {
           
           {/* Brand */}
           <div className="text-white font-bold text-xl">
-            CineHack.ai
+<img
+  src="/logogg.svg"
+  alt="CineHack.ai Logo"
+  className="w-48 md:w-56 mb-2 -ml-3"
+/>
+
           </div>
 
           {/* Navigation Links */}
@@ -50,14 +55,14 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="text-white/60 text-sm">
-            © {year} CineHack.ai. All rights reserved.
+            © {year} CINEHACK.AI. All rights reserved.
           </div>
         </div>
 
         {/* Divider */}
         <div className="border-t border-white/20 pt-4">
           <div className="text-center text-white/50 text-xs">
-            Organized by IEDC FISAT | Innovation Excellence Development Centre
+            Organized by IEDC FISAT | Innovation Entrepreneurship Development Centre
           </div>
         </div>
       </div>

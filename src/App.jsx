@@ -1,34 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import CineHackHeader from "./CineHeader";
 import PillNav from "./components/PillNav";
-import logo from "../src/star.png";
 import About from "./About";
 import Contact from "./Contact";
 import ProblemStatements from "./ProblemStatements";
 import CardSwiper from "./components/CardSwiper";
 import PrizesAndOpportunities from "./Prizes";
-import Timeline from "./components/Timeline";
+import Timeline from "./Timeline";
 import Footer from "./footer";
 import LightsCameraAlgorithmLoader from "./components/Loader"; // Import the loader
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false); // NEW state for toggle
 
   useEffect(() => {
-    // Simulate loading time - you can adjust this duration
+    // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 12000); // 3 seconds loading time
+    }, 12000);
 
-    // Optional: Also wait for all critical resources to load
     const handleLoad = () => {
-      // Add a minimum loading time to ensure users see the animation
       setTimeout(() => {
         setIsLoading(false);
       }, 4000);
     };
 
-    // Check if page is already loaded
     if (document.readyState === 'complete') {
       handleLoad();
     } else {
@@ -50,14 +47,15 @@ function App() {
   return (
     <>
       <PillNav
-        logo={logo}
         logoAlt="FISAT Logo"
         items={[
           { label: "Home", href: "#home" },
           { label: "About", href: "#about" },
-          { label:"Contact", href: "#contact" },
+              { label: "Problem Statements", href: "#problems" },
           { label: "Timeline", href: "#timeline" },
-          { label: "Register", href: "#register" },
+      
+          { label:"Contact", href: "#contact" },
+          
         ]}
         activeHref="#home"
         className="custom-nav"
@@ -66,6 +64,8 @@ function App() {
         pillColor="#0a1535"
         hoveredPillTextColor="#ffffff"
         pillTextColor="#ffffff"
+        isDarkMode={isDarkMode} // pass state
+        onThemeToggle={() => setIsDarkMode(!isDarkMode)} // toggle state
       />
       <CineHackHeader />
       <About />
