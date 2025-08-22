@@ -37,11 +37,20 @@ function App() {
       window.removeEventListener('load', handleLoad);
     };
   }, []);
-
+   useEffect(() => {
+  if (!isLoading && window.location.hash) {
+    const id = window.location.hash.replace("#", "");
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+}, [isLoading]);
   // Show loader while loading
   if (isLoading) {
     return <LightsCameraAlgorithmLoader />;
   }
+ 
 
   // Show main app content after loading
   return (

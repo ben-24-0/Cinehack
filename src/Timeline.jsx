@@ -5,8 +5,8 @@ const timelineData = [
     id: 1,
     stage: "#1",
     title: "Registrations Open",
-    description: "The registration forms are released",
-    date: "Till September 22, 2025",
+    description: "The registration for the event is open for a month.",
+    date: "From August 22, 2025 till September 22, 2025",
     color: "#3b82f6",
     icon: "📝",
     status: "active" // Updated status to match the new timeline
@@ -14,8 +14,8 @@ const timelineData = [
   {
     id: 2,
     stage: "#2", 
-    title: "Shortlisting",
-    description: "Official unveiling of the GenAI Hackathon",
+    title: "Shortlisting and Second Round Registration",
+    description: "The teams are shortlisted based on their ideas and the selected teams are contacted to rely further procedures.",
     date: "September 22, 2025 - September 25, 2025",
     color: "#8b5cf6",
     icon: "🚀",
@@ -25,7 +25,7 @@ const timelineData = [
     id: 3,
     stage: "#3",
     title: "Orientation", 
-    description: "Last call to submit your ideas and solutions.",
+    description: "Orientation and doubt clarification session for selected teams.",
     date: "September 25, 2025 - October 1, 2025",
     color: "#06b6d4",
     icon: "📤",
@@ -35,7 +35,7 @@ const timelineData = [
     id: 4,
     stage: "#4",
     title: "Arrival of Participants in Campus",
-    description: "Top entries selected for the next phase.",
+    description: "Top teams selected for the next phase are to arrive on Campus.",
     date: "October 3, 2025, 4:00 PM",
     color: "#10b981",
     icon: "🔍",
@@ -45,7 +45,7 @@ const timelineData = [
     id: 5,
     stage: "#5",
     title: "Hackathon Commences",
-    description: "Guidelines and resources for selected teams.",
+    description: "Guidelines and resources, as well as mentoring for selected teams.",
     date: "October 4, 2025",
     color: "#f59e0b",
     icon: "📋",
@@ -275,8 +275,14 @@ export default function ProfessionalTimeline() {
         {/* Call to Action */}
         <div className="text-center mt-24">
           <div className="inline-flex items-center space-x-3 px-6 py-3 bg-white/5 backdrop-blur-sm rounded border border-white/10 text-white font-light hover:bg-white/10 transition-all duration-300 hover:scale-105">
+            <a
+                  href="https://makemypass.com/event/cinehack-ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-block"
+                >
             <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
-            <span>Ready to participate?</span>
+            <span>Ready to participate?</span></a>
           </div>
           <p className="text-gray-500 mt-4 text-sm font-light">Join the future of intelligent systems development</p>
         </div>

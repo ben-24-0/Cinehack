@@ -34,10 +34,10 @@ export default function Footer() {
               About
             </a>
             <a 
-              href="#prizes" 
+              href="#problems" 
               className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
             >
-              Prizes
+              Problem Statements
             </a>
             <a 
               href="#timeline" 
