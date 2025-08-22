@@ -240,3 +240,71 @@
   background-color: var(--base);
   color: var(--hover-text, #fff);
 }
+/* ADD THESE NEW STYLES TO YOUR EXISTING PillNav.css FILE */
+
+/* Theme toggle button styles (replaces .pill-logo img styles) */
+.theme-toggle-button {
+  width: var(--nav-h);
+  height: var(--nav-h);
+  border-radius: 50%;
+  background: var(--base, #000);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.theme-toggle-button:hover {
+  transform: scale(1.05);
+}
+
+.theme-icon {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+  filter: grayscale(0.2);
+}
+
+.theme-toggle-button:hover .theme-icon {
+  transform: rotate(15deg) scale(1.1);
+  filter: grayscale(0);
+}
+
+/* Dark mode styles */
+.dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark .pill-nav {
+  background: rgba(26, 26, 26, 0.9);
+}
+
+.dark .pill-nav-container {
+  background: rgba(26, 26, 26, 0.9);
+}
+
+.dark .pill-nav-items {
+  background: var(--base, #333);
+}
+
+.dark .theme-toggle-button {
+  background: var(--base, #333);
+}
+
+.dark .mobile-menu-button {
+  background: var(--base, #333);
+}
+
+.dark .mobile-menu-popover {
+  background: var(--base, #333);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional: Add some subtle glow effect to the theme toggle in dark mode */
+.dark .theme-toggle-button:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
