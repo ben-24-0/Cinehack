@@ -18,7 +18,9 @@ const About = () => {
         <div className="curved px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 flex flex-col lg:flex-row items-center justify-center gap-6 md:gap-8">
           {/* This div contains the heading and the cards. */}
           <div className="flex-1 max-w-4xl text-content text-center lg:text-left">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-white leading-tight">
+            <h1 className="font-bold mb-6 md:mb-8 text-white leading-tight break-words px-1" style={{ 
+              fontSize: 'clamp(24px, 4vw, 48px)'
+            }}>
               WELCOME TO CINEHACK.AI
             </h1>
             {/* New container for the cards with improved styling */}
@@ -30,7 +32,7 @@ const About = () => {
                 <div
                   className="about-card p-4 md:p-6 rounded-lg shadow-xl text-center flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 relative"
                   style={{
-                    background: 'linear-gradient(45deg, #0a1535, #1e3a8a)',
+                    background: 'linear-gradient(45deg, #0a1535, #2e4890ff)',
                     color: 'white'
                   }}
                 >

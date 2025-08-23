@@ -226,6 +226,35 @@ const PillNav = ({
     });
   };
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    
+    const hamburger = hamburgerRef.current;
+    const menu = mobileMenuRef.current;
+
+    // Reset hamburger animation
+    if (hamburger) {
+      const lines = hamburger.querySelectorAll(".hamburger-line");
+      gsap.to(lines[0], { rotation: 0, y: 0, duration: 0.3, ease });
+      gsap.to(lines[1], { rotation: 0, y: 0, duration: 0.3, ease });
+    }
+
+    // Close menu with animation
+    if (menu) {
+      gsap.to(menu, {
+        opacity: 0,
+        y: 10,
+        scaleY: 1,
+        duration: 0.2,
+        ease,
+        transformOrigin: "top center",
+        onComplete: () => {
+          gsap.set(menu, { visibility: "hidden" });
+        },
+      });
+    }
+  };
+
   const toggleMobileMenu = () => {
     const newState = !isMobileMenuOpen;
     setIsMobileMenuOpen(newState);
@@ -440,7 +469,7 @@ const PillNav = ({
                   className={`mobile-menu-link${
                     activeHref === item.href ? " is-active" : ""
                   }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => closeMobileMenu()}
                 >
                   {item.label}
                 </Link>
@@ -452,7 +481,7 @@ const PillNav = ({
                   }`}
                   onClick={(e) => {
                     handleAnchorClick(e, item.href);
-                    setIsMobileMenuOpen(false);
+                    closeMobileMenu();
                   }}
                 >
                   {item.label}
@@ -463,7 +492,7 @@ const PillNav = ({
                   className={`mobile-menu-link${
                     activeHref === item.href ? " is-active" : ""
                   }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => closeMobileMenu()}
                 >
                   {item.label}
                 </a>
