@@ -308,3 +308,50 @@
 .dark .theme-toggle-button:hover {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
+.pill.is-active {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.pill.is-active .pill-label {
+  color: #fff;
+}
+
+.pill.is-active .pill-label-hover {
+  color: #fff;
+}
+
+/* Active state indicator dot */
+.pill.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: #000;
+  border-radius: 50px;
+  z-index: 4;
+}
+
+/* Mobile menu active state */
+.mobile-menu-popover .mobile-menu-link.is-active {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* Dark mode adjustments for active state */
+.dark .pill.is-active {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.dark .pill.is-active::after {
+  background: #000;
+}
+
+.dark .mobile-menu-popover .mobile-menu-link.is-active {
+  background-color: #000 !important;
+  color: #fff !important;
+}

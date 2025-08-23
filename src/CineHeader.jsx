@@ -3,8 +3,95 @@ import LightRays from "./LightRays";
 import TextType from "./TextType";
 
 const CineHackHeader = () => {
+  const logos = [
+    {
+      href: "https://fisat.ac.in/",
+      src: "./FISAT_LOGO.png",
+      alt: "FISAT Logo",
+      hasBackground: true
+    },
+    {
+      href: "https://www.instagram.com/paulyjrpictures/",
+      src: "./paulyjr.png",
+      alt: "Pauly Jr Logo",
+      hasBackground: false
+    },
+    {
+      href: "https://linktr.ee/fisatiedc",
+      src: "./iedc.png",
+      alt: "IEDC Logo",
+      hasBackground: false
+    },
+    {
+      href: "https://fisat.ac.in/alumni/",
+      src: "./fistaa_bg.png",
+      alt: "FISTAA Logo",
+      hasBackground: true
+    },
+    {
+      href: "https://iic.mic.gov.in/",
+      src: "./IIC-logo.webp",
+      alt: "IIC Logo",
+      hasBackground: false
+    }
+  ];
+
+  const LogoItem = ({ logo, index }) => (
+    <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden flex-shrink-0">
+      <a
+        href={logo.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`flex items-center justify-center ${
+          logo.hasBackground 
+            ? "w-16 h-16 rounded-full bg-white" 
+            : "w-full h-full"
+        }`}
+      >
+        <img 
+          className={`object-contain group-hover:scale-110 transition-transform duration-300 ${
+            logo.hasBackground 
+              ? "w-12 h-12" 
+              : "w-16 h-16 object-cover rounded-full"
+          }`} 
+          src={logo.src} 
+          alt={logo.alt} 
+        />
+      </a>
+    </div>
+  );
+
   return (
     <>
+      <style jsx>{`
+        @keyframes infiniteScroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-104px * 5));
+          }
+        }
+        
+        .scroll-container {
+          display: flex;
+          animation: infiniteScroll 20s linear infinite;
+          gap: 24px;
+          padding-right: 24px;
+        }
+        
+        .scroll-container:hover {
+          animation-play-state: paused;
+        }
+        
+        .scroll-wrapper {
+          overflow: hidden;
+          width: 100vw;
+          margin-left: -1.5rem;
+          margin-right: -1.5rem;
+        }
+      `}</style>
+      
       <div
         id="home"
         className="min-h-screen bg-gradient-to-b from-gray-900 to-black relative"
@@ -16,10 +103,10 @@ const CineHackHeader = () => {
             <div className="flex-1 md:pr-8">
               {/* Main logo (SVG) */}
               <img
-    src="/logogg.svg"
-    alt="CineHack.ai Logo"
-    className="w-full max-w-2xl md:max-w-xl mb-4 -ml-3" // Add -ml-8 for a leftward shift
-/>
+                src="/logogg.svg"
+                alt="CineHack.ai Logo"
+                className="w-full max-w-2xl md:max-w-xl mb-4 -ml-3"
+              />
 
               {/* Animated tagline */}
               <p className="text-xl md:text-4xl text-gray-300 font-light mb-10 tracking-wide" style={{ fontFamily: "Skylens" }}>
@@ -98,96 +185,43 @@ const CineHackHeader = () => {
               </div>
             </div>
 
-            {/* Floating sidebar logos */}
-            <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-6 ml-0 md:ml-12 overflow-x-auto md:overflow-x-visible auto-scroll-mobile">
-              <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden flex-shrink-0">
-                <a
-                  href="https://fisat.ac.in/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-16 h-16 rounded-full bg-white flex items-center justify-center"
-                >
-                  <img className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300" src="./FISAT_LOGO.png" alt="FISAT Logo" />
-                </a>
-              </div>
-              
-              <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden flex-shrink-0">
-                <a
-                  href="https://www.instagram.com/paulyjrpictures/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full h-full flex items-center justify-center"
-                >
-                  <img className="w-16 h-16 object-cover rounded-full group-hover:scale-110 transition-transform duration-300" src="./paulyjr.png" alt="Pauly Jr Logo" />
-                </a>
-              </div>
-              
-              <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden flex-shrink-0">
-                <a
-                  href="https://linktr.ee/fisatiedc"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full h-full flex items-center justify-center"
-                >
-                  <img className="w-16 h-16 object-cover rounded-full group-hover:scale-110 transition-transform duration-300" src="./iedc.png" alt="IEDC Logo" />
-                </a>
-              </div>
-              
-              
-              
-              <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden flex-shrink-0">
-                <a
-                  href="https://fisat.ac.in/alumni/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-16 h-16 rounded-full bg-white flex items-center justify-center"
-                >
-                  <img className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300" src="./fistaa_bg.png" alt="FISTAA Logo" />
-                </a>
-              </div>
-              <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden flex-shrink-0">
-                <a
-                  href="https://iic.mic.gov.in/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full h-full flex items-center justify-center"
-                >
-                  <img className="w-16 h-16 object-cover rounded-full group-hover:scale-110 transition-transform duration-300" src="./IIC-logo.webp" alt="IIC Logo" />
-                </a>
-              </div>
-              
-              {/* Duplicate logos for seamless loop on mobile */}
-              <div className="md:hidden w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden flex-shrink-0">
-                <a
-                  href="https://fisat.ac.in/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-16 h-16 rounded-full bg-white flex items-center justify-center"
-                >
-                  <img className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300" src="./FISAT_LOGO.png" alt="FISAT Logo" />
-                </a>
-              </div>
-              
-              <div className="md:hidden w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden flex-shrink-0">
-                <a
-                  href="https://www.instagram.com/paulyjrpictures/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full h-full flex items-center justify-center"
-                >
-                  <img className="w-16 h-16 object-cover rounded-full group-hover:scale-110 transition-transform duration-300" src="./paulyjr.png" alt="Pauly Jr Logo" />
-                </a>
-              </div>
-              
-              <div className="md:hidden w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden flex-shrink-0">
-                <a
-                  href="https://linktr.ee/fisatiedc"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full h-full flex items-center justify-center"
-                >
-                  <img className="w-16 h-16 object-cover rounded-full group-hover:scale-110 transition-transform duration-300" src="./iedc.png" alt="IEDC Logo" />
-                </a>
+            {/* Floating sidebar logos - Desktop only */}
+            <div className="hidden md:flex flex-col space-y-6 ml-0 md:ml-12">
+              {logos.map((logo, index) => (
+                <LogoItem key={index} logo={logo} index={index} />
+              ))}
+            </div>
+
+            {/* Mobile scrolling logos */}
+            <div className="block md:hidden scroll-wrapper">
+              <div className="scroll-container">
+                {/* Render logos multiple times for seamless loop */}
+                {[...Array(8)].map((_, setIndex) => 
+                  logos.map((logo, logoIndex) => (
+                    <div key={`${setIndex}-${logoIndex}`} className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center group overflow-hidden flex-shrink-0">
+                      <a
+                        href={logo.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex items-center justify-center ${
+                          logo.hasBackground 
+                            ? "w-16 h-16 rounded-full bg-white" 
+                            : "w-full h-full"
+                        }`}
+                      >
+                        <img 
+                          className={`object-contain group-hover:scale-110 transition-transform duration-300 ${
+                            logo.hasBackground 
+                              ? "w-12 h-12" 
+                              : "w-16 h-16 object-cover rounded-full"
+                          }`} 
+                          src={logo.src} 
+                          alt={logo.alt} 
+                        />
+                      </a>
+                    </div>
+                  ))
+                ).flat()}
               </div>
             </div>
           </div>
