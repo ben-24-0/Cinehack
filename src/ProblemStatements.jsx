@@ -161,13 +161,13 @@ const ProblemStatements = () => {
                       </div>
 
                       {/* Card Content */}
-                      <div className={`h-full flex flex-col justify-start text-left transition-all duration-700 font-roboto ${
+                      <div className={`h-full flex flex-col justify-start text-left transition-all duration-700 ${
                         isMobile 
                           ? 'px-4 py-4 opacity-100' 
                           : isCenter 
                           ? 'px-4 sm:px-6 py-4 sm:py-6 opacity-100' 
                           : 'px-3 sm:px-4 py-3 sm:py-4 opacity-85'
-                      }`}>
+                      }`}style={{ fontFamily: '"Libertinus Serif Display", system-ui', fontWeight: 400, fontStyle: "normal" }}>
                         <div className="mb-3 sm:mb-4 flex items-start sm:items-center">
                           <div className={`mr-2 sm:mr-3 transition-all duration-500 flex-shrink-0 mt-1 sm:mt-0 ${
                             isMobile || isCenter ? 'text-yellow-400 scale-100 sm:scale-110' : 'text-yellow-300'
