@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import CineHackHeader from "./CineHeader";
 import PillNav from "./components/PillNav";
 import About from "./About";
@@ -7,12 +8,20 @@ import ProblemStatements from "./ProblemStatements";
 import CardSwiper from "./components/CardSwiper";
 import PrizesAndOpportunities from "./Prizes";
 import Timeline from "./Timeline";
+import PreEvent from "./PreEvent";
+import PreEventsPage from "./pages/PreEventsPage";
 import Footer from "./footer";
 import LightsCameraAlgorithmLoader from "./components/Loader"; // Import the loader
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState(false); // NEW state for toggle
+  const location = useLocation();
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [location.pathname]);
 
   useEffect(() => {
     // Simulate loading time
@@ -54,36 +63,42 @@ function App() {
 
   // Show main app content after loading
   return (
-    <>
-      <PillNav
-        logoAlt="FISAT Logo"
-        items={[
-          { label: "Home", href: "#home" },
-          { label: "About", href: "#about" },
+    <Routes>
+      <Route path="/" element={
+        <>
+          <PillNav
+            logoAlt="FISAT Logo"
+            items={[
+              { label: "Home", href: "#home" },
+              { label: "About", href: "#about" },
+              { label: "Pre-Event", href: "#pre-event" },
               { label: "Problem Statements", href: "#problems" },
-          { label: "Timeline", href: "#timeline" },
-      
-          { label:"Contact", href: "#contact" },
-          
-        ]}
-        activeHref="#home"
-        className="custom-nav"
-        ease="power2.easeOut"
-        baseColor="#000000"
-        pillColor="#0a1535"
-        hoveredPillTextColor="#ffffff"
-        pillTextColor="#ffffff"
-        isDarkMode={isDarkMode} // pass state
-        onThemeToggle={() => setIsDarkMode(!isDarkMode)} // toggle state
-      />
-      <CineHackHeader />
-      <About />
-      <PrizesAndOpportunities />
-      <ProblemStatements />
-      <Timeline />
-      <Contact />
-      <Footer />
-    </>
+              { label: "Timeline", href: "#timeline" },
+              { label:"Contact", href: "#contact" },
+              
+            ]}
+            activeHref="#home"
+            className="custom-nav"
+            ease="power2.easeOut"
+            baseColor="#000000"
+            pillColor="#0a1535"
+            hoveredPillTextColor="#ffffff"
+            pillTextColor="#ffffff"
+            isDarkMode={isDarkMode} // pass state
+            onThemeToggle={() => setIsDarkMode(!isDarkMode)} // toggle state
+          />
+          <CineHackHeader />
+          <About />
+          <PreEvent />
+          <PrizesAndOpportunities />
+          <ProblemStatements />
+          <Timeline />
+          <Contact />
+          <Footer />
+        </>
+      } />
+      <Route path="/pre-events" element={<PreEventsPage />} />
+    </Routes>
   );
 }
 
