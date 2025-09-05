@@ -129,9 +129,9 @@ const PreEventsPage = () => {
                     Submit your design in:
                   </p>
                   <ul className="text-gray-300 text-sm space-y-1 ml-4">
-                    <li>• <strong>JPEG</strong> or <strong>PNG</strong> format</li>
-                    <li>• High quality and clear visibility</li>
-                    <li>• Minimum resolution: 1024x1024px</li>
+                    <li>• <strong>JPEG</strong> or <strong>PNG</strong> or <strong>JPG</strong> format</li>
+                    <li>• clear visibility</li>
+                    
                   </ul>
                 </div>
                 
