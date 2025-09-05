@@ -405,9 +405,7 @@ const PreEventsPage = () => {
                 <span>Register for CineHack.ai</span>
                 <ChevronRight size={16} />
               </a>
-              <button className="inline-flex items-center space-x-2 px-6 py-3 border-2 border-gray-600 rounded-lg text-gray-300 font-semibold hover:border-purple-500 hover:text-purple-400 transition-colors duration-300">
-                <span>Follow for Updates</span>
-              </button>
+              
             </div>
           </div>
         </div>
