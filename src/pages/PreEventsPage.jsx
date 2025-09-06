@@ -428,12 +428,12 @@ const PreEventsPage = () => {
         hoveredPillTextColor="#ffffff"
         pillTextColor="#ffffff"
       />
-      
+
       {/* Guidelines Modal */}
       <GuidelinesModal />
 
       {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/50 via-black to-purple-900/30" />
+      
 
       {/* Animated film strip background */}
       <div
@@ -491,7 +491,7 @@ const PreEventsPage = () => {
 
         {/* Stay Updated */}
         <div className="text-center">
-          <div className="max-w-4xl mx-auto p-8 bg-gradient-to-br from-gray-900/40 to-black/40 rounded-2xl border border-gray-700/50">
+          <div className="max-w-4xl mx-auto p-8 bg-gradient-to-br from-gray-900/40 to-black/40 rounded-2xl border border-gray-700/50 mb-36">
             <h3 className="text-2xl font-bold text-white mb-4">Stay Updated</h3>
             <p className="text-gray-300 mb-6">
               The E-Pookalam Contest is now live! Create your AI-generated
@@ -499,7 +499,7 @@ const PreEventsPage = () => {
               pre-events will be announced soon!
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center  ">
               <a
                 href="https://makemypass.com/event/cinehack-ai"
                 target="_blank"
@@ -513,9 +513,10 @@ const PreEventsPage = () => {
           </div>
         </div>
       </div>
+           
 
       {/* Footer */}
-      <Footer />
+      <Footer className="" />
     </div>
   );
 };
