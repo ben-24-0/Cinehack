@@ -16,7 +16,8 @@ const PreEventsPage = () => {
       isActive: true,
       registrationUrl: "https://cinehackai.in",
       deadline: "10th September 2025, 11:59 PM",
-      eligibility: "Open to all college students"
+      eligibility: "Open to all college students",
+      regFee : "30₹"
     },
     { id: 2, icon: <Mic size={32} />, color: "#8b5cf6" },
     { id: 3, icon: <Users size={32} />, color: "#10b981" },

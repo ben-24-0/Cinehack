@@ -118,27 +118,34 @@ const About = () => {
 
           {/* Right side — Gift/Prize */}
           <div className="w-full lg:w-auto flex justify-center">
-            <div className="relative" style={{ width: "480px", height: "300px" }}>
+            <div
+              className="relative"
+              style={{ width: "480px", height: "300px" }}
+            >
               {/* Prize Card */}
               <div
-  style={{
-    width: "500px",
-    opacity: showPrize ? 1 : 0,
-    transform: `translate(-50%, -50%) ${showPrize ? "scale(1)" : "scale(0.8)"}`,
-    transition: "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.8s ease",
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    zIndex: 1,
-  }}
->
-
+                style={{
+                  width: "500px",
+                  opacity: showPrize ? 1 : 0,
+                  transform: `translate(-50%, -50%) ${
+                    showPrize ? "scale(1)" : "scale(0.8)"
+                  }`,
+                  transition:
+                    "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.8s ease",
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  zIndex: 1,
+                }}
+              >
                 <div className="relative p-6 sm:p-8 md:p-12 rounded-2xl shadow-2xl text-center">
                   <div className="absolute inset-0 rounded-2xl bg-white/10 backdrop-blur-xl z-20 border border-white/20"></div>
                   <div
                     className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#2e4890] via-[#9333ea] to-[#1e3a8a] blur-xl opacity-40"
                     style={{
-                      animation: showPrize ? "rotate 4s linear infinite" : "none",
+                      animation: showPrize
+                        ? "rotate 4s linear infinite"
+                        : "none",
                     }}
                   ></div>
                   <div className="relative z-30">
