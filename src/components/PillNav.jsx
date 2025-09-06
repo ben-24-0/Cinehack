@@ -5,8 +5,7 @@ import "./PillNav.css";
 import React from "react";
 
 const PillNav = ({
-  logo,
-  logoAlt = "Logo",
+  logoAlt = "Theme Toggle",
   items,
   activeHref: initialActiveHref,
   className = "",
@@ -17,6 +16,8 @@ const PillNav = ({
   pillTextColor,
   onMobileMenuClick,
   initialLoadAnimation = true,
+  onThemeToggle, // New prop
+  isDarkMode, // New prop
 }) => {
   const resolvedPillTextColor = pillTextColor ?? baseColor;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -24,7 +25,6 @@ const PillNav = ({
   const circleRefs = useRef([]);
   const tlRefs = useRef([]);
   const activeTweenRefs = useRef([]);
-  const logoImgRef = useRef(null);
   const logoTweenRef = useRef(null);
   const hamburgerRef = useRef(null);
   const mobileMenuRef = useRef(null);
@@ -34,9 +34,8 @@ const PillNav = ({
   // Effect to handle scroll and update active section
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100; // offset to trigger slightly before reaching section
+      const scrollPosition = window.scrollY + 100;
 
-      // Get all sections with IDs that match our navigation items
       const sections = items
         .map((item) => {
           if (item.href?.startsWith("#")) {
@@ -53,7 +52,6 @@ const PillNav = ({
         })
         .filter(Boolean);
 
-      // Find the current section based on scroll position
       let currentSection = sections[0]?.id || initialActiveHref;
 
       for (const section of sections) {
@@ -66,14 +64,13 @@ const PillNav = ({
         }
       }
 
-      // Update active href if changed
       if (currentSection !== activeHref) {
         setActiveHref(currentSection);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Call once on mount
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -205,17 +202,57 @@ const PillNav = ({
     });
   };
 
-  const handleLogoEnter = () => {
-    const img = logoImgRef.current;
-    if (!img) return;
+  const handleThemeToggleHover = () => {
+    const toggleBtn = logoRef.current;
+    if (!toggleBtn) return;
     logoTweenRef.current?.kill();
-    gsap.set(img, { rotate: 0 });
-    logoTweenRef.current = gsap.to(img, {
-      rotate: 360,
+    logoTweenRef.current = gsap.to(toggleBtn, {
+      scale: 1.1,
       duration: 0.2,
       ease,
       overwrite: "auto",
     });
+  };
+
+  const handleThemeToggleLeave = () => {
+    const toggleBtn = logoRef.current;
+    if (!toggleBtn) return;
+    logoTweenRef.current?.kill();
+    logoTweenRef.current = gsap.to(toggleBtn, {
+      scale: 1,
+      duration: 0.2,
+      ease,
+      overwrite: "auto",
+    });
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    
+    const hamburger = hamburgerRef.current;
+    const menu = mobileMenuRef.current;
+
+    // Reset hamburger animation
+    if (hamburger) {
+      const lines = hamburger.querySelectorAll(".hamburger-line");
+      gsap.to(lines[0], { rotation: 0, y: 0, duration: 0.3, ease });
+      gsap.to(lines[1], { rotation: 0, y: 0, duration: 0.3, ease });
+    }
+
+    // Close menu with animation
+    if (menu) {
+      gsap.to(menu, {
+        opacity: 0,
+        y: 10,
+        scaleY: 1,
+        duration: 0.2,
+        ease,
+        transformOrigin: "top center",
+        onComplete: () => {
+          gsap.set(menu, { visibility: "hidden" });
+        },
+      });
+    }
   };
 
   const toggleMobileMenu = () => {
@@ -287,7 +324,6 @@ const PillNav = ({
     const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: "smooth", block: "start" });
-      // update URL hash without jump
       history.replaceState(null, "", href);
     }
   };
@@ -306,32 +342,21 @@ const PillNav = ({
         aria-label="Primary"
         style={cssVars}
       >
-        {isRouterLink(items?.[0]?.href) ? (
-          <Link
-            className="pill-logo"
-            to={items[0].href}
-            aria-label="Home"
-            onMouseEnter={handleLogoEnter}
-            role="menuitem"
-            ref={(el) => {
-              logoRef.current = el;
-            }}
-          >
-            <img src={logo} alt={logoAlt} ref={logoImgRef} />
-          </Link>
-        ) : (
-          <a
-            className="pill-logo"
-            href={items?.[0]?.href || "#"}
-            aria-label="Home"
-            onMouseEnter={handleLogoEnter}
-            ref={(el) => {
-              logoRef.current = el;
-            }}
-          >
-            <img src={logo} alt={logoAlt} ref={logoImgRef} />
-          </a>
-        )}
+        {/* Replace logo with theme toggle button */}
+        {/*<button
+          className="pill-logo theme-toggle-button"
+          onClick={onThemeToggle}
+          aria-label="Toggle dark/light mode"
+          onMouseEnter={handleThemeToggleHover}
+          onMouseLeave={handleThemeToggleLeave}
+          ref={(el) => {
+            logoRef.current = el;
+          }}
+        >
+          <span className="theme-icon">
+            {isDarkMode ? '☀️' : '🌙'}
+          </span>
+        </button> */}
 
         <div className="pill-nav-items desktop-only" ref={navItemsRef}>
           <ul className="pill-list" role="menubar">
@@ -444,7 +469,7 @@ const PillNav = ({
                   className={`mobile-menu-link${
                     activeHref === item.href ? " is-active" : ""
                   }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => closeMobileMenu()}
                 >
                   {item.label}
                 </Link>
@@ -456,7 +481,7 @@ const PillNav = ({
                   }`}
                   onClick={(e) => {
                     handleAnchorClick(e, item.href);
-                    setIsMobileMenuOpen(false);
+                    closeMobileMenu();
                   }}
                 >
                   {item.label}
@@ -467,7 +492,7 @@ const PillNav = ({
                   className={`mobile-menu-link${
                     activeHref === item.href ? " is-active" : ""
                   }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => closeMobileMenu()}
                 >
                   {item.label}
                 </a>
